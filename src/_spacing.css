@@ -1,0 +1,28 @@
+/* ============================================
+   XANDRA SPACING
+   Padding and gap utilities
+   ============================================ */
+
+/* ==========================================
+   PADDING UTILITIES
+   Full padding on all sides
+   ========================================== */
+
+.x-pad-1 { padding: var(--x-space-1); }
+.x-pad-2 { padding: var(--x-space-2); }
+.x-pad-3 { padding: var(--x-space-3); }
+.x-pad-4 { padding: var(--x-space-4); }
+.x-pad-5 { padding: var(--x-space-5); }
+.x-pad-6 { padding: var(--x-space-6); }
+
+/* ==========================================
+   GAP UTILITIES
+   For flex and grid containers
+   ========================================== */
+
+.x-gap-1 { gap: var(--x-space-1); }
+.x-gap-2 { gap: var(--x-space-2); }
+.x-gap-3 { gap: var(--x-space-3); }
+.x-gap-4 { gap: var(--x-space-4); }
+.x-gap-5 { gap: var(--x-space-5); }
+.x-gap-6 { gap: var(--x-space-6); }

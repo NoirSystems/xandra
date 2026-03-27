@@ -1,0 +1,84 @@
+/* ============================================
+   XANDRA CSS FRAMEWORK
+   A standardization contract for consistent UI
+
+   Version: 1.0.0
+   Philosophy: One class = one visual contract
+   Complete: No external dependencies needed
+   ============================================ */
+
+/* ==========================================
+   CORE FOUNDATION
+   ========================================== */
+@import './_reset.css';
+@import './_tokens.css';
+@import './_themes.css';
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+@import './_typography.css';
+@import './_text.css';
+
+/* ==========================================
+   LAYOUT
+   ========================================== */
+@import './_layout.css';
+@import './_flexbox.css';
+@import './_grid.css';
+@import './_positioning.css';
+
+/* ==========================================
+   SPACING
+   ========================================== */
+@import './_spacing.css';
+@import './_margins.css';
+@import './_sizing.css';
+
+/* ==========================================
+   VISUAL
+   ========================================== */
+@import './_colors.css';
+@import './_borders.css';
+@import './_utilities.css';
+@import './_effects.css';
+
+/* ==========================================
+   COMPONENTS
+   ========================================== */
+@import './_components.css';
+
+/* ==========================================
+   INTERACTION
+   ========================================== */
+@import './_display.css';
+@import './_transforms.css';
+@import './_transitions.css';
+
+/* ==========================================
+   AUDIT SYSTEM
+   ========================================== */
+@import './_ns-audit.css';
+
+/* ============================================
+   QUICK REFERENCE
+
+   Typography: x-h1-h6 x-body x-caption x-label x-mono
+   Text: x-text-left/center/right x-truncate x-uppercase
+   Layout: x-stack x-row x-between x-center x-block-1/prose/wide/full/2/3/4
+   Flex: x-flex x-flex-col x-grow x-shrink x-justify-* x-items-*
+   Grid: x-grid x-grid-cols-* x-col-span-* x-row-span-*
+   Position: x-relative x-absolute x-fixed x-sticky x-top/right/bottom/left-*
+   Spacing: x-pad-* x-gap-* x-m-* x-mt/mr/mb/ml-* x-mx/my-*
+   Sizing: x-w-* x-h-* x-min-w-* x-max-w-* x-size-* x-aspect-*
+   Colors: x-bg-* x-text-primary/secondary/muted x-border-* x-accent
+   Borders: x-border x-border-* x-round-* x-ring
+   Shadows: x-shadow-sm/md/lg x-drop-shadow-*
+   Effects: x-blur-* x-brightness-* x-backdrop-blur-*
+   Display: x-hidden x-block x-flex x-grid x-opacity-* x-overflow-*
+   Transform: x-scale-* x-rotate-* x-translate-*
+   Transition: x-transition x-duration-* x-ease-* x-animate-*
+   Components: x-btn x-card x-input x-badge x-avatar x-link x-divider
+   Themes: x-theme-dark/light/nvg/high-contrast
+   NS System: [ns] data-ns="reason" x-audit
+   ============================================ */

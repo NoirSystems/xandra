@@ -1,0 +1,127 @@
+/* ============================================
+   XANDRA POSITIONING
+   Position, inset, and z-index utilities
+   ============================================ */
+
+/* ==========================================
+   POSITION
+   ========================================== */
+
+.x-static { position: static; }
+.x-relative { position: relative; }
+.x-absolute { position: absolute; }
+.x-fixed { position: fixed; }
+.x-sticky { position: sticky; }
+
+/* ==========================================
+   INSET (ALL SIDES)
+   ========================================== */
+
+.x-inset-0 { inset: 0; }
+.x-inset-1 { inset: var(--x-space-1); }
+.x-inset-2 { inset: var(--x-space-2); }
+.x-inset-3 { inset: var(--x-space-3); }
+.x-inset-4 { inset: var(--x-space-4); }
+.x-inset-auto { inset: auto; }
+
+/* ==========================================
+   INSET X (LEFT + RIGHT)
+   ========================================== */
+
+.x-inset-x-0 { left: 0; right: 0; }
+.x-inset-x-1 { left: var(--x-space-1); right: var(--x-space-1); }
+.x-inset-x-2 { left: var(--x-space-2); right: var(--x-space-2); }
+.x-inset-x-3 { left: var(--x-space-3); right: var(--x-space-3); }
+.x-inset-x-4 { left: var(--x-space-4); right: var(--x-space-4); }
+.x-inset-x-auto { left: auto; right: auto; }
+
+/* ==========================================
+   INSET Y (TOP + BOTTOM)
+   ========================================== */
+
+.x-inset-y-0 { top: 0; bottom: 0; }
+.x-inset-y-1 { top: var(--x-space-1); bottom: var(--x-space-1); }
+.x-inset-y-2 { top: var(--x-space-2); bottom: var(--x-space-2); }
+.x-inset-y-3 { top: var(--x-space-3); bottom: var(--x-space-3); }
+.x-inset-y-4 { top: var(--x-space-4); bottom: var(--x-space-4); }
+.x-inset-y-auto { top: auto; bottom: auto; }
+
+/* ==========================================
+   TOP
+   ========================================== */
+
+.x-top-0 { top: 0; }
+.x-top-1 { top: var(--x-space-1); }
+.x-top-2 { top: var(--x-space-2); }
+.x-top-3 { top: var(--x-space-3); }
+.x-top-4 { top: var(--x-space-4); }
+.x-top-5 { top: var(--x-space-5); }
+.x-top-6 { top: var(--x-space-6); }
+.x-top-auto { top: auto; }
+.x-top-full { top: 100%; }
+.x-top-half { top: 50%; }
+
+/* ==========================================
+   RIGHT
+   ========================================== */
+
+.x-right-0 { right: 0; }
+.x-right-1 { right: var(--x-space-1); }
+.x-right-2 { right: var(--x-space-2); }
+.x-right-3 { right: var(--x-space-3); }
+.x-right-4 { right: var(--x-space-4); }
+.x-right-5 { right: var(--x-space-5); }
+.x-right-6 { right: var(--x-space-6); }
+.x-right-auto { right: auto; }
+.x-right-full { right: 100%; }
+.x-right-half { right: 50%; }
+
+/* ==========================================
+   BOTTOM
+   ========================================== */
+
+.x-bottom-0 { bottom: 0; }
+.x-bottom-1 { bottom: var(--x-space-1); }
+.x-bottom-2 { bottom: var(--x-space-2); }
+.x-bottom-3 { bottom: var(--x-space-3); }
+.x-bottom-4 { bottom: var(--x-space-4); }
+.x-bottom-5 { bottom: var(--x-space-5); }
+.x-bottom-6 { bottom: var(--x-space-6); }
+.x-bottom-auto { bottom: auto; }
+.x-bottom-full { bottom: 100%; }
+.x-bottom-half { bottom: 50%; }
+
+/* ==========================================
+   LEFT
+   ========================================== */
+
+.x-left-0 { left: 0; }
+.x-left-1 { left: var(--x-space-1); }
+.x-left-2 { left: var(--x-space-2); }
+.x-left-3 { left: var(--x-space-3); }
+.x-left-4 { left: var(--x-space-4); }
+.x-left-5 { left: var(--x-space-5); }
+.x-left-6 { left: var(--x-space-6); }
+.x-left-auto { left: auto; }
+.x-left-full { left: 100%; }
+.x-left-half { left: 50%; }
+
+/* ==========================================
+   Z-INDEX
+   ========================================== */
+
+.x-z-0 { z-index: 0; }
+.x-z-10 { z-index: 10; }
+.x-z-20 { z-index: 20; }
+.x-z-30 { z-index: 30; }
+.x-z-40 { z-index: 40; }
+.x-z-50 { z-index: 50; }
+.x-z-auto { z-index: auto; }
+
+/* Semantic z-index */
+.x-z-base { z-index: var(--x-z-base); }
+.x-z-dropdown { z-index: var(--x-z-dropdown); }
+.x-z-sticky { z-index: var(--x-z-sticky); }
+.x-z-modal { z-index: var(--x-z-modal); }
+.x-z-tooltip { z-index: var(--x-z-tooltip); }
+.x-z-max { z-index: var(--x-z-max); }

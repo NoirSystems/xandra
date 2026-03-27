@@ -1,0 +1,128 @@
+/* ============================================
+   XANDRA BORDERS
+   Border width, style, and color utilities
+   ============================================ */
+
+/* ==========================================
+   BORDER WIDTH - ALL SIDES
+   ========================================== */
+
+.x-border-0 { border-width: 0; }
+.x-border { border-width: 1px; border-style: solid; border-color: var(--x-border-default); }
+.x-border-2 { border-width: 2px; border-style: solid; border-color: var(--x-border-default); }
+.x-border-3 { border-width: 3px; border-style: solid; border-color: var(--x-border-default); }
+.x-border-4 { border-width: 4px; border-style: solid; border-color: var(--x-border-default); }
+
+/* ==========================================
+   BORDER WIDTH - INDIVIDUAL SIDES
+   ========================================== */
+
+.x-border-t { border-top-width: 1px; border-top-style: solid; border-top-color: var(--x-border-default); }
+.x-border-t-0 { border-top-width: 0; }
+.x-border-t-2 { border-top-width: 2px; border-top-style: solid; border-top-color: var(--x-border-default); }
+
+.x-border-r { border-right-width: 1px; border-right-style: solid; border-right-color: var(--x-border-default); }
+.x-border-r-0 { border-right-width: 0; }
+.x-border-r-2 { border-right-width: 2px; border-right-style: solid; border-right-color: var(--x-border-default); }
+
+.x-border-b { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: var(--x-border-default); }
+.x-border-b-0 { border-bottom-width: 0; }
+.x-border-b-2 { border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: var(--x-border-default); }
+
+.x-border-l { border-left-width: 1px; border-left-style: solid; border-left-color: var(--x-border-default); }
+.x-border-l-0 { border-left-width: 0; }
+.x-border-l-2 { border-left-width: 2px; border-left-style: solid; border-left-color: var(--x-border-default); }
+
+.x-border-x { border-left-width: 1px; border-right-width: 1px; border-style: solid; border-color: var(--x-border-default); }
+.x-border-y { border-top-width: 1px; border-bottom-width: 1px; border-style: solid; border-color: var(--x-border-default); }
+
+/* ==========================================
+   BORDER STYLE
+   ========================================== */
+
+.x-border-solid { border-style: solid; }
+.x-border-dashed { border-style: dashed; }
+.x-border-dotted { border-style: dotted; }
+.x-border-double { border-style: double; }
+.x-border-hidden { border-style: hidden; }
+.x-border-none { border-style: none; }
+
+/* ==========================================
+   BORDER COLOR
+   ========================================== */
+
+.x-border-subtle { border-color: var(--x-border-subtle); }
+.x-border-default { border-color: var(--x-border-default); }
+.x-border-strong { border-color: var(--x-border-strong); }
+.x-border-accent { border-color: var(--x-accent); }
+.x-border-success { border-color: var(--x-success); }
+.x-border-warning { border-color: var(--x-warning); }
+.x-border-error { border-color: var(--x-error); }
+.x-border-transparent { border-color: transparent; }
+
+/* ==========================================
+   DIVIDE (BORDERS BETWEEN CHILDREN)
+   ========================================== */
+
+.x-divide-x > * + * {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: var(--x-border-default);
+}
+
+.x-divide-y > * + * {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--x-border-default);
+}
+
+.x-divide-subtle > * + * { border-color: var(--x-border-subtle); }
+.x-divide-strong > * + * { border-color: var(--x-border-strong); }
+
+/* ==========================================
+   OUTLINE
+   ========================================== */
+
+.x-outline-none { outline: 2px solid transparent; outline-offset: 2px; }
+.x-outline { outline-style: solid; }
+.x-outline-dashed { outline-style: dashed; }
+.x-outline-dotted { outline-style: dotted; }
+.x-outline-double { outline-style: double; }
+
+.x-outline-0 { outline-width: 0; }
+.x-outline-1 { outline-width: 1px; }
+.x-outline-2 { outline-width: 2px; }
+.x-outline-4 { outline-width: 4px; }
+
+.x-outline-offset-0 { outline-offset: 0; }
+.x-outline-offset-1 { outline-offset: 1px; }
+.x-outline-offset-2 { outline-offset: 2px; }
+.x-outline-offset-4 { outline-offset: 4px; }
+
+/* ==========================================
+   RING (FOCUS RING UTILITY)
+   ========================================== */
+
+.x-ring {
+  box-shadow: var(--x-focus-ring);
+}
+
+.x-ring-0 {
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.x-ring-1 {
+  box-shadow: 0 0 0 1px var(--x-accent);
+}
+
+.x-ring-2 {
+  box-shadow: 0 0 0 2px var(--x-accent);
+}
+
+.x-ring-4 {
+  box-shadow: 0 0 0 4px var(--x-accent);
+}
+
+.x-ring-inset {
+  box-shadow: inset 0 0 0 2px var(--x-accent);
+}

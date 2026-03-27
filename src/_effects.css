@@ -1,0 +1,166 @@
+/* ============================================
+   XANDRA EFFECTS
+   Filters, backdrop, and visual effects
+   ============================================ */
+
+/* ==========================================
+   FILTER - BLUR
+   ========================================== */
+
+.x-blur-none { filter: blur(0); }
+.x-blur-sm { filter: blur(4px); }
+.x-blur { filter: blur(8px); }
+.x-blur-md { filter: blur(12px); }
+.x-blur-lg { filter: blur(16px); }
+.x-blur-xl { filter: blur(24px); }
+.x-blur-2xl { filter: blur(40px); }
+.x-blur-3xl { filter: blur(64px); }
+
+/* ==========================================
+   FILTER - BRIGHTNESS
+   ========================================== */
+
+.x-brightness-0 { filter: brightness(0); }
+.x-brightness-50 { filter: brightness(0.5); }
+.x-brightness-75 { filter: brightness(0.75); }
+.x-brightness-90 { filter: brightness(0.9); }
+.x-brightness-95 { filter: brightness(0.95); }
+.x-brightness-100 { filter: brightness(1); }
+.x-brightness-105 { filter: brightness(1.05); }
+.x-brightness-110 { filter: brightness(1.1); }
+.x-brightness-125 { filter: brightness(1.25); }
+.x-brightness-150 { filter: brightness(1.5); }
+.x-brightness-200 { filter: brightness(2); }
+
+/* ==========================================
+   FILTER - CONTRAST
+   ========================================== */
+
+.x-contrast-0 { filter: contrast(0); }
+.x-contrast-50 { filter: contrast(0.5); }
+.x-contrast-75 { filter: contrast(0.75); }
+.x-contrast-100 { filter: contrast(1); }
+.x-contrast-125 { filter: contrast(1.25); }
+.x-contrast-150 { filter: contrast(1.5); }
+.x-contrast-200 { filter: contrast(2); }
+
+/* ==========================================
+   FILTER - GRAYSCALE
+   ========================================== */
+
+.x-grayscale-0 { filter: grayscale(0); }
+.x-grayscale { filter: grayscale(100%); }
+
+/* ==========================================
+   FILTER - INVERT
+   ========================================== */
+
+.x-invert-0 { filter: invert(0); }
+.x-invert { filter: invert(100%); }
+
+/* ==========================================
+   FILTER - SATURATE
+   ========================================== */
+
+.x-saturate-0 { filter: saturate(0); }
+.x-saturate-50 { filter: saturate(0.5); }
+.x-saturate-100 { filter: saturate(1); }
+.x-saturate-150 { filter: saturate(1.5); }
+.x-saturate-200 { filter: saturate(2); }
+
+/* ==========================================
+   FILTER - SEPIA
+   ========================================== */
+
+.x-sepia-0 { filter: sepia(0); }
+.x-sepia { filter: sepia(100%); }
+
+/* ==========================================
+   FILTER - DROP SHADOW
+   ========================================== */
+
+.x-drop-shadow-sm { filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05)); }
+.x-drop-shadow { filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06)); }
+.x-drop-shadow-md { filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)); }
+.x-drop-shadow-lg { filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)); }
+.x-drop-shadow-xl { filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08)); }
+.x-drop-shadow-2xl { filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)); }
+.x-drop-shadow-none { filter: drop-shadow(0 0 #0000); }
+
+/* ==========================================
+   BACKDROP FILTER - BLUR
+   ========================================== */
+
+.x-backdrop-blur-none { backdrop-filter: blur(0); }
+.x-backdrop-blur-sm { backdrop-filter: blur(4px); }
+.x-backdrop-blur { backdrop-filter: blur(8px); }
+.x-backdrop-blur-md { backdrop-filter: blur(12px); }
+.x-backdrop-blur-lg { backdrop-filter: blur(16px); }
+.x-backdrop-blur-xl { backdrop-filter: blur(24px); }
+.x-backdrop-blur-2xl { backdrop-filter: blur(40px); }
+.x-backdrop-blur-3xl { backdrop-filter: blur(64px); }
+
+/* ==========================================
+   BACKDROP FILTER - BRIGHTNESS
+   ========================================== */
+
+.x-backdrop-brightness-0 { backdrop-filter: brightness(0); }
+.x-backdrop-brightness-50 { backdrop-filter: brightness(0.5); }
+.x-backdrop-brightness-75 { backdrop-filter: brightness(0.75); }
+.x-backdrop-brightness-90 { backdrop-filter: brightness(0.9); }
+.x-backdrop-brightness-100 { backdrop-filter: brightness(1); }
+.x-backdrop-brightness-105 { backdrop-filter: brightness(1.05); }
+.x-backdrop-brightness-110 { backdrop-filter: brightness(1.1); }
+.x-backdrop-brightness-150 { backdrop-filter: brightness(1.5); }
+
+/* ==========================================
+   BACKDROP FILTER - SATURATE
+   ========================================== */
+
+.x-backdrop-saturate-0 { backdrop-filter: saturate(0); }
+.x-backdrop-saturate-50 { backdrop-filter: saturate(0.5); }
+.x-backdrop-saturate-100 { backdrop-filter: saturate(1); }
+.x-backdrop-saturate-150 { backdrop-filter: saturate(1.5); }
+.x-backdrop-saturate-200 { backdrop-filter: saturate(2); }
+
+/* ==========================================
+   MIX BLEND MODE
+   ========================================== */
+
+.x-blend-normal { mix-blend-mode: normal; }
+.x-blend-multiply { mix-blend-mode: multiply; }
+.x-blend-screen { mix-blend-mode: screen; }
+.x-blend-overlay { mix-blend-mode: overlay; }
+.x-blend-darken { mix-blend-mode: darken; }
+.x-blend-lighten { mix-blend-mode: lighten; }
+.x-blend-color-dodge { mix-blend-mode: color-dodge; }
+.x-blend-color-burn { mix-blend-mode: color-burn; }
+.x-blend-hard-light { mix-blend-mode: hard-light; }
+.x-blend-soft-light { mix-blend-mode: soft-light; }
+.x-blend-difference { mix-blend-mode: difference; }
+.x-blend-exclusion { mix-blend-mode: exclusion; }
+.x-blend-hue { mix-blend-mode: hue; }
+.x-blend-saturation { mix-blend-mode: saturation; }
+.x-blend-color { mix-blend-mode: color; }
+.x-blend-luminosity { mix-blend-mode: luminosity; }
+
+/* ==========================================
+   BACKGROUND BLEND MODE
+   ========================================== */
+
+.x-bg-blend-normal { background-blend-mode: normal; }
+.x-bg-blend-multiply { background-blend-mode: multiply; }
+.x-bg-blend-screen { background-blend-mode: screen; }
+.x-bg-blend-overlay { background-blend-mode: overlay; }
+.x-bg-blend-darken { background-blend-mode: darken; }
+.x-bg-blend-lighten { background-blend-mode: lighten; }
+.x-bg-blend-color-dodge { background-blend-mode: color-dodge; }
+.x-bg-blend-color-burn { background-blend-mode: color-burn; }
+.x-bg-blend-hard-light { background-blend-mode: hard-light; }
+.x-bg-blend-soft-light { background-blend-mode: soft-light; }
+.x-bg-blend-difference { background-blend-mode: difference; }
+.x-bg-blend-exclusion { background-blend-mode: exclusion; }
+.x-bg-blend-hue { background-blend-mode: hue; }
+.x-bg-blend-saturation { background-blend-mode: saturation; }
+.x-bg-blend-color { background-blend-mode: color; }
+.x-bg-blend-luminosity { background-blend-mode: luminosity; }

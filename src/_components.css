@@ -1,0 +1,408 @@
+/* ============================================
+   XANDRA COMPONENTS
+   Self-responsive UI components
+   ============================================ */
+
+/* ==========================================
+   BUTTON
+   Primary action button
+   ========================================== */
+
+.x-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--x-space-2);
+
+  padding: var(--x-space-2) var(--x-space-4);
+  min-height: 2.5rem;
+
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-caption);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--x-text-inverse);
+  text-decoration: none;
+  white-space: nowrap;
+
+  background-color: var(--x-bg-primary);
+  border: none;
+  border-radius: var(--x-radius-md);
+
+  cursor: pointer;
+  transition:
+    background-color var(--x-transition-normal),
+    transform var(--x-transition-fast);
+}
+
+.x-btn:hover {
+  background-color: var(--x-bg-primary-hover);
+}
+
+.x-btn:active {
+  transform: scale(0.98);
+}
+
+.x-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--x-focus-ring);
+}
+
+.x-btn:disabled,
+.x-btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ==========================================
+   CARD
+   Container component with adaptive padding
+   ========================================== */
+
+.x-card {
+  container-type: inline-size;
+
+  padding: var(--x-space-4);
+
+  background-color: var(--x-bg-surface);
+  border: 1px solid var(--x-border-subtle);
+  border-radius: var(--x-radius-md);
+  box-shadow:
+    0 1px 2px hsl(var(--x-shadow-color) / calc(var(--x-shadow-strength) * 1)),
+    0 1px 3px hsl(var(--x-shadow-color) / calc(var(--x-shadow-strength) * 0.5));
+}
+
+/* Card adapts padding based on its own container size */
+@container (min-width: 400px) {
+  .x-card {
+    padding: var(--x-space-5);
+  }
+}
+
+@container (min-width: 600px) {
+  .x-card {
+    padding: var(--x-space-6);
+  }
+}
+
+/* ==========================================
+   INPUT
+   Form input field
+   ========================================== */
+
+.x-input {
+  display: block;
+  width: 100%;
+  padding: var(--x-space-2) var(--x-space-3);
+  min-height: 2.5rem;
+
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-body);
+  color: var(--x-text-primary);
+
+  background-color: var(--x-bg-base);
+  border: 1px solid var(--x-border-default);
+  border-radius: var(--x-radius-sm);
+
+  transition:
+    border-color var(--x-transition-normal),
+    box-shadow var(--x-transition-normal);
+}
+
+.x-input::placeholder {
+  color: var(--x-text-muted);
+}
+
+.x-input:focus {
+  outline: none;
+  border-color: var(--x-accent);
+  box-shadow: var(--x-focus-ring);
+}
+
+.x-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Validation states via HTML5 */
+.x-input:invalid:not(:placeholder-shown) {
+  border-color: var(--x-error);
+}
+
+.x-input:valid:not(:placeholder-shown) {
+  border-color: var(--x-success);
+}
+
+/* ==========================================
+   BADGE
+   Inline label/tag
+   ========================================== */
+
+.x-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--x-space-1);
+
+  padding: var(--x-space-1) var(--x-space-2);
+
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-label);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--x-text-primary);
+
+  background-color: var(--x-bg-elevated);
+  border-radius: var(--x-radius-full);
+}
+
+/* ==========================================
+   AVATAR
+   User/profile image container
+   ========================================== */
+
+.x-avatar {
+  --avatar-size: clamp(2rem, 5vw, 3rem);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+
+  font-family: var(--x-font-sans);
+  font-size: calc(var(--avatar-size) * 0.4);
+  font-weight: 600;
+  color: var(--x-text-inverse);
+
+  background-color: var(--x-accent);
+  border-radius: var(--x-radius-full);
+  overflow: hidden;
+}
+
+.x-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================
+   LINK
+   Styled anchor element
+   ========================================== */
+
+.x-link {
+  color: var(--x-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color var(--x-transition-normal);
+}
+
+.x-link:hover {
+  color: var(--x-accent-hover);
+}
+
+.x-link:focus-visible {
+  outline: none;
+  box-shadow: var(--x-focus-ring);
+  border-radius: var(--x-radius-sm);
+}
+
+/* ==========================================
+   DIVIDER
+   Horizontal rule/separator
+   ========================================== */
+
+.x-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--x-border-subtle);
+  border: none;
+}
+
+/* ==========================================
+   BUTTON VARIANTS
+   Ghost and outline button styles
+   ========================================== */
+
+.x-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--x-space-2);
+
+  padding: var(--x-space-2) var(--x-space-4);
+  min-height: 2.5rem;
+
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-caption);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--x-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+
+  background-color: transparent;
+  border: none;
+  border-radius: var(--x-radius-md);
+
+  cursor: pointer;
+  transition:
+    background-color var(--x-transition-normal),
+    transform var(--x-transition-fast);
+}
+
+.x-btn-ghost:hover {
+  background-color: var(--x-bg-elevated);
+}
+
+.x-btn-ghost:active {
+  transform: scale(0.98);
+}
+
+.x-btn-ghost:focus-visible {
+  outline: none;
+  box-shadow: var(--x-focus-ring);
+}
+
+.x-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--x-space-2);
+
+  padding: var(--x-space-2) var(--x-space-4);
+  min-height: 2.5rem;
+
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-caption);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--x-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+
+  background-color: transparent;
+  border: 1px solid var(--x-border-default);
+  border-radius: var(--x-radius-md);
+
+  cursor: pointer;
+  transition:
+    background-color var(--x-transition-normal),
+    border-color var(--x-transition-normal),
+    transform var(--x-transition-fast);
+}
+
+.x-btn-outline:hover {
+  background-color: var(--x-bg-elevated);
+  border-color: var(--x-border-strong);
+}
+
+.x-btn-outline:active {
+  transform: scale(0.98);
+}
+
+.x-btn-outline:focus-visible {
+  outline: none;
+  box-shadow: var(--x-focus-ring);
+}
+
+/* ==========================================
+   CODE
+   Inline code and code blocks
+   ========================================== */
+
+.x-code {
+  font-family: var(--x-font-mono);
+  font-size: 0.875em;
+  color: var(--x-accent);
+  background-color: var(--x-accent-muted);
+  padding: 0.15em 0.4em;
+  border-radius: var(--x-radius-sm);
+}
+
+.x-pre {
+  font-family: var(--x-font-mono);
+  font-size: var(--x-text-caption);
+  line-height: var(--x-leading-relaxed);
+  color: var(--x-text-primary);
+  background-color: var(--x-bg-base);
+  border: 1px solid var(--x-border-subtle);
+  border-radius: var(--x-radius-md);
+  padding: var(--x-space-4);
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 2;
+}
+
+/* ==========================================
+   GLASS
+   Glassmorphism card variant
+   ========================================== */
+
+.x-glass {
+  background: hsl(var(--x-shadow-color) / 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--x-shadow-color) / 0.1);
+  border-radius: var(--x-radius-lg);
+}
+
+/* ==========================================
+   SWITCH / TOGGLE
+   Toggle switch component
+   ========================================== */
+
+.x-switch {
+  --switch-w: 2.75rem;
+  --switch-h: 1.5rem;
+  --switch-thumb: 1.125rem;
+
+  position: relative;
+  display: inline-block;
+  width: var(--switch-w);
+  height: var(--switch-h);
+  flex-shrink: 0;
+}
+
+.x-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.x-switch-track {
+  position: absolute;
+  inset: 0;
+  background-color: var(--x-bg-elevated);
+  border: 1px solid var(--x-border-default);
+  border-radius: var(--x-radius-full);
+  cursor: pointer;
+  transition: background-color var(--x-transition-normal);
+}
+
+.x-switch-track::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  width: var(--switch-thumb);
+  height: var(--switch-thumb);
+  background-color: var(--x-text-primary);
+  border-radius: var(--x-radius-full);
+  transition: transform var(--x-transition-normal);
+}
+
+.x-switch input:checked + .x-switch-track {
+  background-color: var(--x-accent);
+  border-color: var(--x-accent);
+}
+
+.x-switch input:checked + .x-switch-track::after {
+  transform: translateY(-50%) translateX(calc(var(--switch-w) - var(--switch-thumb) - 7px));
+  background-color: var(--x-text-inverse);
+}

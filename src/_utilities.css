@@ -1,0 +1,52 @@
+/* ============================================
+   XANDRA UTILITIES
+   Border radius and shadow utilities
+   ============================================ */
+
+/* ==========================================
+   BORDER RADIUS
+   ========================================== */
+
+.x-round-sm { border-radius: var(--x-radius-sm); }
+.x-round-md { border-radius: var(--x-radius-md); }
+.x-round-lg { border-radius: var(--x-radius-lg); }
+.x-round-full { border-radius: var(--x-radius-full); }
+
+/* ==========================================
+   SHADOWS
+   Elevation levels using theme-aware shadow tokens
+   ========================================== */
+
+.x-shadow-sm {
+  box-shadow:
+    0 1px 2px hsl(var(--x-shadow-color) / calc(var(--x-shadow-strength) * 1)),
+    0 1px 3px hsl(var(--x-shadow-color) / calc(var(--x-shadow-strength) * 0.5));
+}
+
+.x-shadow-md {
+  box-shadow:
+    0 4px 6px hsl(var(--x-shadow-color) / calc(var(--x-shadow-strength) * 1)),
+    0 2px 4px hsl(var(--x-shadow-color) / calc(var(--x-shadow-strength) * 0.5));
+}
+
+.x-shadow-lg {
+  box-shadow:
+    0 10px 15px hsl(var(--x-shadow-color) / calc(var(--x-shadow-strength) * 1)),
+    0 4px 6px hsl(var(--x-shadow-color) / calc(var(--x-shadow-strength) * 0.5));
+}
+
+/* ==========================================
+   VISIBILITY
+   ========================================== */
+
+.x-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

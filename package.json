@@ -1,0 +1,28 @@
+{
+  "name": "xandra",
+  "version": "1.0.0",
+  "description": "Xandra CSS Framework - A standardization contract for consistent UI",
+  "main": "dist/xandra.css",
+  "style": "dist/xandra.css",
+  "exports": {
+    ".": {
+      "import": "./dist/xandra.css",
+      "require": "./dist/xandra.css",
+      "default": "./dist/xandra.css"
+    },
+    "./src/*": "./src/*"
+  },
+  "scripts": {
+    "build": "mkdir -p dist && lightningcss --bundle --minify --targets \">= 0.25%\" src/xandra.css -o dist/xandra.min.css && lightningcss --bundle src/xandra.css -o dist/xandra.css"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "ui"
+  ],
+  "author": "",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "lightningcss-cli": "^1.24.1"
+  }
+}

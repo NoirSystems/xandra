@@ -1,0 +1,95 @@
+/* ============================================
+   XANDRA MARGINS
+   Complete margin utilities
+   ============================================ */
+
+/* ==========================================
+   ALL SIDES
+   ========================================== */
+
+.x-m-0 { margin: 0; }
+.x-m-1 { margin: var(--x-space-1); }
+.x-m-2 { margin: var(--x-space-2); }
+.x-m-3 { margin: var(--x-space-3); }
+.x-m-4 { margin: var(--x-space-4); }
+.x-m-5 { margin: var(--x-space-5); }
+.x-m-6 { margin: var(--x-space-6); }
+.x-m-auto { margin: auto; }
+
+/* ==========================================
+   HORIZONTAL (X-AXIS)
+   ========================================== */
+
+.x-mx-0 { margin-inline: 0; }
+.x-mx-1 { margin-inline: var(--x-space-1); }
+.x-mx-2 { margin-inline: var(--x-space-2); }
+.x-mx-3 { margin-inline: var(--x-space-3); }
+.x-mx-4 { margin-inline: var(--x-space-4); }
+.x-mx-5 { margin-inline: var(--x-space-5); }
+.x-mx-6 { margin-inline: var(--x-space-6); }
+.x-mx-auto { margin-inline: auto; }
+
+/* ==========================================
+   VERTICAL (Y-AXIS)
+   ========================================== */
+
+.x-my-0 { margin-block: 0; }
+.x-my-1 { margin-block: var(--x-space-1); }
+.x-my-2 { margin-block: var(--x-space-2); }
+.x-my-3 { margin-block: var(--x-space-3); }
+.x-my-4 { margin-block: var(--x-space-4); }
+.x-my-5 { margin-block: var(--x-space-5); }
+.x-my-6 { margin-block: var(--x-space-6); }
+.x-my-auto { margin-block: auto; }
+
+/* ==========================================
+   TOP
+   ========================================== */
+
+.x-mt-0 { margin-top: 0; }
+.x-mt-1 { margin-top: var(--x-space-1); }
+.x-mt-2 { margin-top: var(--x-space-2); }
+.x-mt-3 { margin-top: var(--x-space-3); }
+.x-mt-4 { margin-top: var(--x-space-4); }
+.x-mt-5 { margin-top: var(--x-space-5); }
+.x-mt-6 { margin-top: var(--x-space-6); }
+.x-mt-auto { margin-top: auto; }
+
+/* ==========================================
+   RIGHT
+   ========================================== */
+
+.x-mr-0 { margin-right: 0; }
+.x-mr-1 { margin-right: var(--x-space-1); }
+.x-mr-2 { margin-right: var(--x-space-2); }
+.x-mr-3 { margin-right: var(--x-space-3); }
+.x-mr-4 { margin-right: var(--x-space-4); }
+.x-mr-5 { margin-right: var(--x-space-5); }
+.x-mr-6 { margin-right: var(--x-space-6); }
+.x-mr-auto { margin-right: auto; }
+
+/* ==========================================
+   BOTTOM
+   ========================================== */
+
+.x-mb-0 { margin-bottom: 0; }
+.x-mb-1 { margin-bottom: var(--x-space-1); }
+.x-mb-2 { margin-bottom: var(--x-space-2); }
+.x-mb-3 { margin-bottom: var(--x-space-3); }
+.x-mb-4 { margin-bottom: var(--x-space-4); }
+.x-mb-5 { margin-bottom: var(--x-space-5); }
+.x-mb-6 { margin-bottom: var(--x-space-6); }
+.x-mb-auto { margin-bottom: auto; }
+
+/* ==========================================
+   LEFT
+   ========================================== */
+
+.x-ml-0 { margin-left: 0; }
+.x-ml-1 { margin-left: var(--x-space-1); }
+.x-ml-2 { margin-left: var(--x-space-2); }
+.x-ml-3 { margin-left: var(--x-space-3); }
+.x-ml-4 { margin-left: var(--x-space-4); }
+.x-ml-5 { margin-left: var(--x-space-5); }
+.x-ml-6 { margin-left: var(--x-space-6); }
+.x-ml-auto { margin-left: auto; }
