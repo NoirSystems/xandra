@@ -1,0 +1,158 @@
+/* ============================================
+   XANDRA TYPOGRAPHY
+   13 type classes with fluid sizing
+   ============================================ */
+
+/* ==========================================
+   DISPLAY
+   Hero/display text — largest, boldest
+   ========================================== */
+
+.x-display {
+  font-family: var(--x-font-sans);
+  font-size: clamp(2.5rem, 6vw + 1rem, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: var(--x-tracking-tight);
+  color: var(--x-text-primary);
+}
+
+/* ==========================================
+   HEADINGS
+   All headings use clamp() for fluid responsive sizing
+   ========================================== */
+
+.x-h1 {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-h1);
+  font-weight: 700;
+  line-height: var(--x-leading-tight);
+  letter-spacing: var(--x-tracking-tight);
+  color: var(--x-text-primary);
+}
+
+.x-h2 {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-h2);
+  font-weight: 600;
+  line-height: var(--x-leading-tight);
+  letter-spacing: var(--x-tracking-tight);
+  color: var(--x-text-primary);
+}
+
+.x-h3 {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-h3);
+  font-weight: 600;
+  line-height: var(--x-leading-tight);
+  letter-spacing: var(--x-tracking-normal);
+  color: var(--x-text-primary);
+}
+
+.x-h4 {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-h4);
+  font-weight: 600;
+  line-height: var(--x-leading-tight);
+  letter-spacing: var(--x-tracking-normal);
+  color: var(--x-text-primary);
+}
+
+.x-h5 {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-h5);
+  font-weight: 500;
+  line-height: var(--x-leading-tight);
+  letter-spacing: var(--x-tracking-normal);
+  color: var(--x-text-primary);
+}
+
+.x-h6 {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-h6);
+  font-weight: 500;
+  line-height: var(--x-leading-tight);
+  letter-spacing: var(--x-tracking-normal);
+  color: var(--x-text-primary);
+}
+
+/* ==========================================
+   LEAD
+   Intro paragraph — slightly larger body text
+   ========================================== */
+
+.x-lead {
+  font-family: var(--x-font-sans);
+  font-size: clamp(1.125rem, 0.75vw + 0.875rem, 1.375rem);
+  font-weight: 400;
+  line-height: var(--x-leading-relaxed);
+  letter-spacing: var(--x-tracking-normal);
+  color: var(--x-text-secondary);
+}
+
+/* ==========================================
+   BODY TEXT
+   ========================================== */
+
+.x-body {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-body);
+  font-weight: 400;
+  line-height: var(--x-leading-normal);
+  letter-spacing: var(--x-tracking-normal);
+  color: var(--x-text-secondary);
+}
+
+/* ==========================================
+   SMALL
+   Fine print, disclaimers
+   ========================================== */
+
+.x-small {
+  font-family: var(--x-font-sans);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: var(--x-leading-normal);
+  letter-spacing: var(--x-tracking-normal);
+  color: var(--x-text-muted);
+}
+
+/* ==========================================
+   CAPTION
+   Smaller supporting text
+   ========================================== */
+
+.x-caption {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-caption);
+  font-weight: 400;
+  line-height: var(--x-leading-normal);
+  letter-spacing: var(--x-tracking-normal);
+  color: var(--x-text-muted);
+}
+
+/* ==========================================
+   LABEL
+   Uppercase, small, used for form labels and metadata
+   ========================================== */
+
+.x-label {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-label);
+  font-weight: 500;
+  line-height: var(--x-leading-tight);
+  letter-spacing: var(--x-tracking-wide);
+  text-transform: uppercase;
+  color: var(--x-text-secondary);
+}
+
+/* ==========================================
+   MONOSPACE
+   For code and technical content
+   ========================================== */
+
+.x-mono {
+  font-family: var(--x-font-mono);
+  font-size: 0.9em; /* Slightly smaller to match x-height of sans */
+  line-height: var(--x-leading-relaxed);
+}

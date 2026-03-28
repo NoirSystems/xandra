@@ -1,0 +1,52 @@
+/* ============================================
+   XANDRA SPACING
+   Padding, gap, and vertical rhythm margins
+   ============================================ */
+
+/* ==========================================
+   PADDING
+   Full padding on all sides
+   ========================================== */
+
+.x-pad-1 { padding: var(--x-space-1); }
+.x-pad-2 { padding: var(--x-space-2); }
+.x-pad-3 { padding: var(--x-space-3); }
+.x-pad-4 { padding: var(--x-space-4); }
+.x-pad-5 { padding: var(--x-space-5); }
+.x-pad-6 { padding: var(--x-space-6); }
+
+/* ==========================================
+   GAP
+   For flex and grid containers
+   ========================================== */
+
+.x-gap-1 { gap: var(--x-space-1); }
+.x-gap-2 { gap: var(--x-space-2); }
+.x-gap-3 { gap: var(--x-space-3); }
+.x-gap-4 { gap: var(--x-space-4); }
+.x-gap-5 { gap: var(--x-space-5); }
+.x-gap-6 { gap: var(--x-space-6); }
+
+/* ==========================================
+   MARGIN TOP
+   Vertical rhythm — spacing between sections
+   ========================================== */
+
+.x-mt-1 { margin-top: var(--x-space-1); }
+.x-mt-2 { margin-top: var(--x-space-2); }
+.x-mt-3 { margin-top: var(--x-space-3); }
+.x-mt-4 { margin-top: var(--x-space-4); }
+.x-mt-5 { margin-top: var(--x-space-5); }
+.x-mt-6 { margin-top: var(--x-space-6); }
+
+/* ==========================================
+   MARGIN BOTTOM
+   Vertical rhythm — spacing after elements
+   ========================================== */
+
+.x-mb-1 { margin-bottom: var(--x-space-1); }
+.x-mb-2 { margin-bottom: var(--x-space-2); }
+.x-mb-3 { margin-bottom: var(--x-space-3); }
+.x-mb-4 { margin-bottom: var(--x-space-4); }
+.x-mb-5 { margin-bottom: var(--x-space-5); }
+.x-mb-6 { margin-bottom: var(--x-space-6); }

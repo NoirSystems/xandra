@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="x-theme-dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Xandra Test Page</title>
+  <link rel="stylesheet" href="xandra.css">
+</head>
+<body class="x-bg-base x-text-primary">
+
+  <!-- Standard page layout -->
+  <main class="x-block-1 x-stack x-pad-5">
+
+    <!-- Section header (standard pattern) -->
+    <div class="x-between">
+      <h1 class="x-h1">Dashboard</h1>
+      <div class="x-row">
+        <button class="x-btn">New Item</button>
+        <button class="x-btn-ghost">Settings</button>
+      </div>
+    </div>
+
+    <div class="x-divider"></div>
+
+    <!-- Card grid -->
+    <div class="x-block-3">
+      <!-- Standard card -->
+      <article class="x-card">
+        <header>Active Users</header>
+        <p class="x-display">1,247</p>
+        <footer>+12% from last week</footer>
+      </article>
+
+      <!-- Standard card -->
+      <article class="x-card x-stack">
+        <h3 class="x-h3">Revenue</h3>
+        <p class="x-body">Monthly recurring revenue overview.</p>
+        <div class="x-row">
+          <a class="x-btn" href="/revenue">View Report</a>
+        </div>
+      </article>
+
+      <!-- NS card: custom requirement -->
+      <article class="x-card" ns data-ns="needs chart component for analytics">
+        <header>Analytics</header>
+        <div ns data-ns="third-party: chart.js canvas" data-ns-boundary>
+          <canvas id="chart"></canvas>
+        </div>
+      </article>
+    </div>
+
+    <!-- ERROR: will trigger conflict check -->
+    <div class="x-stack x-row">
+      <p>This should trigger a conflict error</p>
+    </div>
+
+    <!-- WARNING: non-x class without ns -->
+    <div class="x-card mt-8 max-w-lg">
+      <p class="x-body">This has Tailwind classes without ns</p>
+    </div>
+
+    <!-- ERROR: ns without reason -->
+    <div class="x-card" ns>
+      <p class="x-body">Deviation without explanation</p>
+    </div>
+
+    <!-- WARNING: redundant padding -->
+    <div class="x-card x-pad-3 x-pad-5">
+      <p class="x-body">Two padding values</p>
+    </div>
+
+    <!-- Standard footer -->
+    <footer class="x-between x-pad-4 x-border-subtle">
+      <p class="x-caption">Built with Xandra</p>
+      <nav class="x-row">
+        <a class="x-link" href="/docs">Docs</a>
+        <a class="x-link" href="/github">GitHub</a>
+      </nav>
+    </footer>
+
+  </main>
+
+</body>
+</html>

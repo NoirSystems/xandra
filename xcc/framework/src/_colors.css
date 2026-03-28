@@ -1,0 +1,48 @@
+/* ============================================
+   XANDRA COLORS
+   Semantic color utility classes
+   ============================================ */
+
+/* ==========================================
+   BACKGROUND COLORS
+   ========================================== */
+
+.x-bg-base { background-color: var(--x-bg-base); }
+.x-bg-surface { background-color: var(--x-bg-surface); }
+.x-bg-elevated { background-color: var(--x-bg-elevated); }
+.x-bg-primary { background-color: var(--x-bg-primary); }
+
+/* Status backgrounds (muted variants for subtle indication) */
+.x-bg-success { background-color: var(--x-success-muted); }
+.x-bg-warning { background-color: var(--x-warning-muted); }
+.x-bg-error { background-color: var(--x-error-muted); }
+
+/* ==========================================
+   TEXT COLORS
+   ========================================== */
+
+.x-text-primary { color: var(--x-text-primary); }
+.x-text-secondary { color: var(--x-text-secondary); }
+.x-text-muted { color: var(--x-text-muted); }
+.x-text-inverse { color: var(--x-text-inverse); }
+
+/* Status text */
+.x-text-success { color: var(--x-success); }
+.x-text-warning { color: var(--x-warning); }
+.x-text-error { color: var(--x-error); }
+
+/* ==========================================
+   ACCENT
+   Text color for emphasis/links
+   ========================================== */
+
+.x-accent { color: var(--x-accent); }
+
+/* ==========================================
+   BORDERS
+   Semantic border styles
+   ========================================== */
+
+.x-border { border: 1px solid var(--x-border-default); }
+.x-border-subtle { border: 1px solid var(--x-border-subtle); }
+.x-border-strong { border: 1px solid var(--x-border-strong); }

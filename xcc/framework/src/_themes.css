@@ -1,0 +1,180 @@
+/* ============================================
+   XANDRA THEMES
+   Color tokens for each theme variation
+   ============================================ */
+
+/* ==========================================
+   DARK THEME (Default)
+   Applied to :root and .x-theme-dark
+   ========================================== */
+:root,
+.x-theme-dark {
+  /* Backgrounds */
+  --x-bg-base: hsl(240 10% 4%);
+  --x-bg-surface: hsl(240 6% 8%);
+  --x-bg-elevated: hsl(240 5% 12%);
+  --x-bg-primary: hsl(217 91% 60%);
+  --x-bg-primary-hover: hsl(217 91% 50%);
+
+  /* Text */
+  --x-text-primary: hsl(0 0% 98%);
+  --x-text-secondary: hsl(240 5% 65%);
+  --x-text-muted: hsl(240 4% 46%);
+  --x-text-inverse: hsl(240 10% 4%);
+
+  /* Borders */
+  --x-border-subtle: hsl(240 4% 16%);
+  --x-border-default: hsl(240 4% 26%);
+  --x-border-strong: hsl(240 4% 36%);
+
+  /* Accent & Interactive */
+  --x-accent: hsl(217 91% 60%);
+  --x-accent-hover: hsl(217 91% 50%);
+  --x-accent-muted: hsl(217 91% 60% / 0.2);
+
+  /* Semantic colors */
+  --x-success: hsl(142 71% 45%);
+  --x-success-muted: hsl(142 71% 45% / 0.2);
+  --x-warning: hsl(38 92% 50%);
+  --x-warning-muted: hsl(38 92% 50% / 0.2);
+  --x-error: hsl(0 72% 51%);
+  --x-error-muted: hsl(0 72% 51% / 0.2);
+
+  /* Shadows */
+  --x-shadow-color: 240 10% 4%;
+  --x-shadow-strength: 0.25;
+
+  /* Focus ring */
+  --x-focus-ring: 0 0 0 3px hsl(217 91% 60% / 0.4);
+}
+
+/* ==========================================
+   LIGHT THEME
+   ========================================== */
+.x-theme-light {
+  /* Backgrounds */
+  --x-bg-base: hsl(0 0% 100%);
+  --x-bg-surface: hsl(240 5% 96%);
+  --x-bg-elevated: hsl(0 0% 100%);
+  --x-bg-primary: hsl(217 91% 50%);
+  --x-bg-primary-hover: hsl(217 91% 40%);
+
+  /* Text */
+  --x-text-primary: hsl(240 10% 10%);
+  --x-text-secondary: hsl(240 4% 36%);
+  --x-text-muted: hsl(240 4% 55%);
+  --x-text-inverse: hsl(0 0% 98%);
+
+  /* Borders */
+  --x-border-subtle: hsl(240 6% 90%);
+  --x-border-default: hsl(240 5% 84%);
+  --x-border-strong: hsl(240 4% 70%);
+
+  /* Accent & Interactive */
+  --x-accent: hsl(217 91% 50%);
+  --x-accent-hover: hsl(217 91% 40%);
+  --x-accent-muted: hsl(217 91% 50% / 0.15);
+
+  /* Semantic colors */
+  --x-success: hsl(142 71% 35%);
+  --x-success-muted: hsl(142 71% 45% / 0.15);
+  --x-warning: hsl(38 92% 40%);
+  --x-warning-muted: hsl(38 92% 50% / 0.15);
+  --x-error: hsl(0 72% 45%);
+  --x-error-muted: hsl(0 72% 51% / 0.15);
+
+  /* Shadows */
+  --x-shadow-color: 240 5% 30%;
+  --x-shadow-strength: 0.08;
+
+  /* Focus ring */
+  --x-focus-ring: 0 0 0 3px hsl(217 91% 50% / 0.3);
+}
+
+/* ==========================================
+   NVG THEME (Night Vision Green)
+   Military/tactical theme
+   ========================================== */
+.x-theme-nvg {
+  /* Backgrounds */
+  --x-bg-base: hsl(0 0% 0%);
+  --x-bg-surface: hsl(120 100% 3%);
+  --x-bg-elevated: hsl(120 100% 6%);
+  --x-bg-primary: hsl(120 100% 50%);
+  --x-bg-primary-hover: hsl(120 100% 40%);
+
+  /* Text */
+  --x-text-primary: hsl(120 100% 50%);
+  --x-text-secondary: hsl(120 100% 40%);
+  --x-text-muted: hsl(120 100% 30%);
+  --x-text-inverse: hsl(0 0% 0%);
+
+  /* Borders */
+  --x-border-subtle: hsl(120 100% 10%);
+  --x-border-default: hsl(120 100% 18%);
+  --x-border-strong: hsl(120 100% 25%);
+
+  /* Accent & Interactive */
+  --x-accent: hsl(120 100% 50%);
+  --x-accent-hover: hsl(120 100% 40%);
+  --x-accent-muted: hsl(120 100% 50% / 0.2);
+
+  /* Semantic colors - all in green spectrum for NVG */
+  --x-success: hsl(120 100% 50%);
+  --x-success-muted: hsl(120 100% 50% / 0.2);
+  --x-warning: hsl(120 60% 50%);
+  --x-warning-muted: hsl(120 60% 50% / 0.2);
+  --x-error: hsl(120 30% 40%);
+  --x-error-muted: hsl(120 30% 40% / 0.2);
+
+  /* Shadows */
+  --x-shadow-color: 120 100% 25%;
+  --x-shadow-strength: 0.3;
+
+  /* Focus ring */
+  --x-focus-ring: 0 0 0 3px hsl(120 100% 50% / 0.5);
+}
+
+/* ==========================================
+   HIGH CONTRAST THEME
+   Accessibility-focused theme
+   ========================================== */
+.x-theme-high-contrast {
+  /* Backgrounds */
+  --x-bg-base: hsl(0 0% 0%);
+  --x-bg-surface: hsl(0 0% 0%);
+  --x-bg-elevated: hsl(0 0% 10%);
+  --x-bg-primary: hsl(60 100% 50%);
+  --x-bg-primary-hover: hsl(60 100% 40%);
+
+  /* Text */
+  --x-text-primary: hsl(0 0% 100%);
+  --x-text-secondary: hsl(0 0% 100%);
+  --x-text-muted: hsl(0 0% 80%);
+  --x-text-inverse: hsl(0 0% 0%);
+
+  /* Borders */
+  --x-border-subtle: hsl(0 0% 100%);
+  --x-border-default: hsl(0 0% 100%);
+  --x-border-strong: hsl(0 0% 100%);
+
+  /* Accent & Interactive */
+  --x-accent: hsl(60 100% 50%);
+  --x-accent-hover: hsl(60 100% 40%);
+  --x-accent-muted: hsl(60 100% 50% / 0.3);
+
+  /* Semantic colors - high saturation for visibility */
+  --x-success: hsl(120 100% 50%);
+  --x-success-muted: hsl(120 100% 50% / 0.3);
+  --x-warning: hsl(60 100% 50%);
+  --x-warning-muted: hsl(60 100% 50% / 0.3);
+  --x-error: hsl(0 100% 50%);
+  --x-error-muted: hsl(0 100% 50% / 0.3);
+
+  /* Shadows - stronger for visibility */
+  --x-shadow-color: 0 0% 100%;
+  --x-shadow-strength: 0.5;
+
+  /* Focus ring - extra visible */
+  --x-focus-ring: 0 0 0 4px hsl(60 100% 50%);
+}

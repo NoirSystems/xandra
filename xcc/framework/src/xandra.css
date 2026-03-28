@@ -1,0 +1,88 @@
+/* ============================================
+   XANDRA CSS FRAMEWORK
+   A standardization contract for consistent UI
+
+   Version: 2.0.0
+   Philosophy: One class = one visual contract
+   Total classes: ~81
+   Zero JavaScript. Zero dependencies.
+   ============================================ */
+
+/* ==========================================
+   CORE FOUNDATION
+   ========================================== */
+@import './_reset.css';
+@import './_tokens.css';
+@import './_themes.css';
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+@import './_typography.css';
+
+/* ==========================================
+   LAYOUT
+   ========================================== */
+@import './_layout.css';
+
+/* ==========================================
+   SPACING
+   ========================================== */
+@import './_spacing.css';
+
+/* ==========================================
+   VISUAL
+   ========================================== */
+@import './_colors.css';
+@import './_utilities.css';
+
+/* ==========================================
+   COMPONENTS
+   ========================================== */
+@import './_components.css';
+
+/* ==========================================
+   AUDIT SYSTEM
+   ========================================== */
+@import './_ns-audit.css';
+
+/* ============================================
+   COMPLETE CLASS REFERENCE (~81 classes)
+
+   Typography (13):
+     x-display  x-h1  x-h2  x-h3  x-h4  x-h5  x-h6
+     x-lead  x-body  x-small  x-caption  x-label  x-mono
+
+   Layout (12):
+     x-stack  x-row  x-between  x-center
+     x-block-1  x-block-prose  x-block-wide  x-block-full
+     x-block-2  x-block-3  x-block-4
+     x-hidden  x-sr-only
+
+   Spacing (20):
+     x-pad-1..6  x-gap-1..6  x-mt-1..6  x-mb-1..6
+
+   Color (18):
+     x-bg-base  x-bg-surface  x-bg-elevated  x-bg-primary
+     x-bg-success  x-bg-warning  x-bg-error
+     x-text-primary  x-text-secondary  x-text-muted  x-text-inverse
+     x-text-success  x-text-warning  x-text-error
+     x-accent  x-border  x-border-subtle  x-border-strong
+
+   Utilities (8):
+     x-round-sm  x-round-md  x-round-lg  x-round-full
+     x-shadow-sm  x-shadow-md  x-shadow-lg
+     x-overflow-auto
+
+   Components (10+):
+     x-btn  x-btn-ghost  x-btn-outline
+     x-card  x-input  x-badge  x-avatar
+     x-link  x-divider  x-code  x-pre
+
+   Themes:
+     x-theme-dark (default)  x-theme-light
+     x-theme-nvg  x-theme-high-contrast
+
+   NS System:
+     [ns]  data-ns="reason"  data-ns-boundary  .x-audit
+   ============================================ */

@@ -1,0 +1,82 @@
+/* ============================================
+   XANDRA DESIGN TOKENS
+   CSS Custom Properties for the entire system
+   ============================================ */
+
+:root {
+  /* ==========================================
+     SPACING SCALE
+     Base unit: 4px
+     ========================================== */
+  --x-space-1: 0.25rem;   /* 4px */
+  --x-space-2: 0.5rem;    /* 8px */
+  --x-space-3: 0.75rem;   /* 12px */
+  --x-space-4: 1rem;      /* 16px */
+  --x-space-5: 1.5rem;    /* 24px */
+  --x-space-6: 2rem;      /* 32px */
+  --x-space-7: 3rem;      /* 48px */
+  --x-space-8: 4rem;      /* 64px */
+
+  /* ==========================================
+     TYPOGRAPHY
+     Fluid type scale with clamp()
+     ========================================== */
+  --x-font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --x-font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, 'Liberation Mono', monospace;
+
+  /* Headings - fluid scaling */
+  --x-text-h1: clamp(2rem, 5vw + 1rem, 3.5rem);       /* 32px → 56px */
+  --x-text-h2: clamp(1.5rem, 3vw + 0.75rem, 2.5rem); /* 24px → 40px */
+  --x-text-h3: clamp(1.25rem, 2vw + 0.5rem, 2rem);   /* 20px → 32px */
+  --x-text-h4: clamp(1.125rem, 1vw + 0.5rem, 1.5rem);/* 18px → 24px */
+  --x-text-h5: clamp(1rem, 0.5vw + 0.5rem, 1.25rem); /* 16px → 20px */
+  --x-text-h6: clamp(0.875rem, 0.25vw + 0.5rem, 1rem);/* 14px → 16px */
+
+  /* Body text */
+  --x-text-body: clamp(1rem, 0.5vw + 0.75rem, 1.125rem); /* 16px → 18px */
+  --x-text-caption: 0.875rem;  /* 14px - fixed */
+  --x-text-label: 0.75rem;     /* 12px - fixed */
+
+  /* Line heights */
+  --x-leading-tight: 1.2;
+  --x-leading-normal: 1.5;
+  --x-leading-relaxed: 1.75;
+
+  /* Letter spacing */
+  --x-tracking-tight: -0.02em;
+  --x-tracking-normal: 0;
+  --x-tracking-wide: 0.05em;
+
+  /* ==========================================
+     BORDER RADIUS
+     ========================================== */
+  --x-radius-sm: 0.25rem;   /* 4px */
+  --x-radius-md: 0.5rem;    /* 8px */
+  --x-radius-lg: 0.75rem;   /* 12px */
+  --x-radius-full: 9999px;
+
+  /* ==========================================
+     TRANSITIONS
+     ========================================== */
+  --x-transition-fast: 100ms ease;
+  --x-transition-normal: 150ms ease;
+  --x-transition-slow: 300ms ease;
+
+  /* ==========================================
+     BREAKPOINTS (as reference values)
+     ========================================== */
+  --x-bp-sm: 640px;
+  --x-bp-md: 768px;
+  --x-bp-lg: 1024px;
+  --x-bp-xl: 1280px;
+
+  /* ==========================================
+     Z-INDEX SCALE
+     ========================================== */
+  --x-z-base: 0;
+  --x-z-dropdown: 100;
+  --x-z-sticky: 200;
+  --x-z-modal: 300;
+  --x-z-tooltip: 400;
+  --x-z-max: 9999;
+}

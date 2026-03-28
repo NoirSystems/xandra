@@ -1,0 +1,23 @@
+{
+  "name": "xcc",
+  "version": "1.0.0",
+  "description": "Xandra Contract Compiler — TypeScript for CSS. Validates HTML against the Xandra design contract.",
+  "type": "module",
+  "bin": {
+    "xcc": "./bin/xcc.js"
+  },
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node bin/xcc.js",
+    "test": "node --test src/**/*.test.js"
+  },
+  "keywords": ["css", "design-system", "linter", "audit", "xandra"],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "htmlparser2": "^9.1.0",
+    "domhandler": "^5.0.3",
+    "domutils": "^3.1.0",
+    "fast-glob": "^3.3.2",
+    "css-tree": "^3.0.1"
+  }
+}

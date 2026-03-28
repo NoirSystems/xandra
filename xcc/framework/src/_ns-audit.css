@@ -1,0 +1,149 @@
+/* ============================================
+   XANDRA NS (NON-STANDARD) AUDIT SYSTEM
+
+   Any deviation from Xandra's standard classes must use:
+   - [ns] attribute to mark the deviation
+   - data-ns attribute to explain WHY the deviation is needed
+
+   Example:
+   <div class="x-card" ns data-ns="needs custom max-width for hero section">
+
+   Enable audit mode by adding .x-audit to <body> or <html>
+   ============================================ */
+
+/* ==========================================
+   BASE NS INDICATOR
+   Subtle visual marker on all ns elements (always visible)
+   ========================================== */
+
+[ns] {
+  position: relative;
+}
+
+[ns]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--x-warning);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--x-z-max);
+}
+
+/* ==========================================
+   AUDIT MODE
+   Toggle on <html> or <body> to highlight all ns elements
+   Shows outlines and displays data-ns reasons
+   ========================================== */
+
+/* Highlight all ns elements with dashed outline */
+.x-audit [ns] {
+  outline: 2px dashed var(--x-warning) !important;
+  outline-offset: 2px;
+}
+
+/* Show the data-ns reason as a tooltip-like label */
+.x-audit [ns]::after {
+  content: attr(data-ns);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: calc(var(--x-z-max) + 1);
+
+  padding: var(--x-space-1) var(--x-space-2);
+  max-width: 300px;
+
+  font-family: var(--x-font-mono);
+  font-size: 10px;
+  line-height: 1.3;
+  color: hsl(0 0% 0%);
+  white-space: normal;
+
+  background-color: var(--x-warning);
+  border-radius: var(--x-radius-sm);
+
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--x-transition-fast), transform var(--x-transition-fast);
+}
+
+/* Show tooltip on hover */
+.x-audit [ns]:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   ERROR STATE
+   Missing data-ns explanation - show red indicator
+   ========================================== */
+
+/* Red dot for missing explanation */
+[ns]:not([data-ns])::before {
+  background-color: var(--x-error);
+}
+
+/* Red outline in audit mode */
+.x-audit [ns]:not([data-ns]) {
+  outline-color: var(--x-error) !important;
+}
+
+/* Error message for missing explanation */
+.x-audit [ns]:not([data-ns])::after {
+  content: '⚠ Missing data-ns explanation!';
+  background-color: var(--x-error);
+  color: hsl(0 0% 100%);
+}
+
+/* ==========================================
+   BOUNDARY-LEVEL NS
+   For wrapping third-party components
+   All children are implicitly non-standard
+   ========================================== */
+
+[ns][data-ns-boundary] {
+  /* Third-party boundary wrapper */
+}
+
+/* In audit mode, show boundary indicator */
+.x-audit [ns][data-ns-boundary]::after {
+  content: 'Third-party: ' attr(data-ns);
+  background-color: var(--x-accent);
+}
+
+/* ==========================================
+   NS COUNT BADGE
+   Shows total ns count on the page (in audit mode)
+   Apply to body: <body class="x-audit">
+   ========================================== */
+
+.x-audit::before {
+  content: 'Audit Mode';
+  position: fixed;
+  top: var(--x-space-4);
+  right: var(--x-space-4);
+  z-index: calc(var(--x-z-max) + 2);
+
+  padding: var(--x-space-2) var(--x-space-4);
+
+  font-family: var(--x-font-mono);
+  font-size: var(--x-text-label);
+  font-weight: 600;
+  color: hsl(0 0% 0%);
+
+  background-color: var(--x-warning);
+  border-radius: var(--x-radius-full);
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   AUDIT MODE TOGGLE (Optional)
+   Keyboard shortcut hint
+   ========================================== */
+
+/* Add to your JS: document.body.classList.toggle('x-audit') on key press */

@@ -5,3 +5,6 @@ dist/
 
 # Documentation (AI memory bank & design docs)
 docs/
+
+# Compiler dependencies
+xcc/node_modules/
