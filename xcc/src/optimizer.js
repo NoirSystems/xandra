@@ -32,7 +32,12 @@ export function collectUsedClasses(scanResults) {
  * Parse CSS and remove rules whose selectors reference unused x- classes
  */
 export function optimizeCSS(cssSource, usedClasses) {
-  const ast = csstree.parse(cssSource, { positions: true });
+  let ast;
+  try {
+    ast = csstree.parse(cssSource, { positions: true });
+  } catch (e) {
+    throw new Error(`Failed to parse CSS: ${e.message}`);
+  }
 
   // Track which rules to remove
   const toRemove = [];

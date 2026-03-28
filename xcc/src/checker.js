@@ -153,29 +153,19 @@ export function check(scanResults, registry, config) {
       }
 
       // --- Rule 8: Excessive nesting depth ---
-      if (el.depth > config.depth.warn) {
-        // Only warn once per deep element, not for every descendant
-        const xDepth = countXandraAncestors(el);
-        if (xDepth > config.depth.warn) {
-          results.push({
-            severity: 'warning',
-            code: 'DEEP_NESTING',
-            message: `Xandra class nesting depth ${xDepth} exceeds threshold ${config.depth.warn} — consider flattening`,
-            file: el.file,
-            line: el.line,
-          });
-        }
+      if (el.xClasses.length > 0 && el.depth > config.depth.warn) {
+        results.push({
+          severity: 'warning',
+          code: 'DEEP_NESTING',
+          message: `Element at DOM depth ${el.depth} exceeds threshold ${config.depth.warn} — consider flattening`,
+          file: el.file,
+          line: el.line,
+        });
       }
     }
   }
 
   return results;
-}
-
-function countXandraAncestors(el) {
-  // Count how many levels of x- classes are in the parent chain
-  // We approximate this by looking at parentXClasses depth propagation
-  return el.parentXClasses.length;
 }
 
 /**

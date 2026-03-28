@@ -28,7 +28,9 @@ import { generateDocs, generateHTML, writeDocs } from './documenter.js';
 import * as report from './reporter.js';
 import { bold, dim, cyan } from './colors.js';
 
-const VERSION = '1.1.0';
+import { createRequire } from 'node:module';
+const _require = createRequire(import.meta.url);
+const { version: VERSION } = _require('../package.json');
 
 export async function cli(args) {
   const command = args[0];

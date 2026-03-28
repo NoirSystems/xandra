@@ -218,7 +218,8 @@ export class Registry {
     const results = [];
 
     for (const group of CONFLICT_GROUPS) {
-      const matches = xClasses.filter(c => group.classes.includes(c));
+      const groupSet = group._set || (group._set = new Set(group.classes));
+      const matches = xClasses.filter(c => groupSet.has(c));
       if (matches.length > 1) {
         results.push({
           severity: group.severity,
@@ -239,7 +240,8 @@ export class Registry {
     const results = [];
 
     for (const group of REDUNDANCY_GROUPS) {
-      const matches = xClasses.filter(c => group.classes.includes(c));
+      const groupSet = group._set || (group._set = new Set(group.classes));
+      const matches = xClasses.filter(c => groupSet.has(c));
       if (matches.length > 1) {
         results.push({
           severity: 'warning',

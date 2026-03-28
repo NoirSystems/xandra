@@ -323,6 +323,13 @@
   cursor: not-allowed;
 }
 
+/* Override browser autofill styling to match theme */
+.x-input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 999px var(--x-bg-base);
+  -webkit-text-fill-color: var(--x-text-primary);
+  caret-color: var(--x-text-primary);
+}
+
 /* Validation states via HTML5 */
 .x-input:invalid:not(:placeholder-shown) {
   border-color: var(--x-error);
