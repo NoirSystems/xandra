@@ -52,7 +52,7 @@ Or link the CSS directly:
 ### 2. Install the compiler (optional but recommended)
 
 ```bash
-npm install -D xcc
+npm install -D xandra-cc
 npx xcc init
 npx xcc check src/
 ```
@@ -289,7 +289,7 @@ The density system works by locally overriding these tokens:
 | Package | Purpose | Install |
 |---------|---------|---------|
 | [`xandra`](.) | CSS framework (~85 classes) | `npm install xandra` |
-| [`xcc`](./xcc) | Contract compiler (7 commands) | `npm install -D xcc` |
+| [`xcc`](./xcc) | Contract compiler (7 commands) | `npm install -D xandra-cc` |
 | [`vscode-xandra`](./vscode-xandra) | VSCode extension | Marketplace / local install |
 
 ---

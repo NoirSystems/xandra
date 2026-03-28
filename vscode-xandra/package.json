@@ -3,8 +3,13 @@
   "displayName": "Xandra CSS",
   "description": "Xandra CSS framework support — class completion, contract validation, ns tracking, composition insights",
   "version": "0.1.0",
-  "publisher": "xandra-css",
-  "license": "MIT",
+  "publisher": "alexcircuits",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NoirSystems/Xandra.git",
+    "directory": "vscode-xandra"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },

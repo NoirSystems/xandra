@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="x-theme-dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xandra CSS Framework</title>
+  <link rel="stylesheet" href="dist/xandra.css">
+</head>
+<body class="x-bg-base x-text-primary">
+
+  <main class="x-block-1 x-stack x-pad-5">
+
+    <!-- Hero -->
+    <div class="x-stack x-pad-6" style="text-align: center;">
+      <h1 class="x-display">Xandra</h1>
+      <p class="x-lead">A standardization contract for consistent UI. ~85 classes. Zero JavaScript.</p>
+      <div class="x-row" style="justify-content: center;">
+        <a class="x-btn" href="https://github.com/NoirSystems/Xandra">GitHub</a>
+        <a class="x-btn-outline" href="https://www.npmjs.com/package/xandra">npm install xandra</a>
+      </div>
+    </div>
+
+    <div class="x-divider"></div>
+
+    <!-- Section: Implicit Child Styling -->
+    <section class="x-stack">
+      <div class="x-between">
+        <h2 class="x-h2">Implicit Child Styling</h2>
+        <span class="x-badge">New in 2.1</span>
+      </div>
+      <p class="x-body">Cards know their slots. One class on the parent. Semantic HTML does the rest.</p>
+
+      <div class="x-block-3">
+        <!-- Media card -->
+        <article class="x-card">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=300&fit=crop" alt="Mountains">
+          <header>Media Card</header>
+          <p>Image goes edge-to-edge. Header and footer are auto-styled. No extra classes on children.</p>
+          <footer>
+            <button class="x-btn">Save</button>
+            <button class="x-btn-ghost">Cancel</button>
+          </footer>
+        </article>
+
+        <!-- Standard card -->
+        <article class="x-card x-stack">
+          <h3 class="x-h3">Standard Card</h3>
+          <p class="x-body">Vertical stack layout with automatic gap. Typography scales fluidly via clamp().</p>
+          <div class="x-row">
+            <a class="x-btn" href="#">View Report</a>
+            <a class="x-btn-ghost" href="#">Details</a>
+          </div>
+        </article>
+
+        <!-- Stat card -->
+        <article class="x-card">
+          <header>Active Users</header>
+          <p class="x-display">1,247</p>
+          <footer>+12% from last week</footer>
+        </article>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- Section: Density System -->
+    <section class="x-stack">
+      <h2 class="x-h2">Density System</h2>
+      <p class="x-body">One class on a parent. Entire subtree adapts. No size variants needed.</p>
+
+      <div class="x-block-3">
+        <!-- Default density -->
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Default</h4>
+          <p class="x-body">Standard spacing throughout.</p>
+          <button class="x-btn">Action</button>
+        </article>
+
+        <!-- Dense -->
+        <article class="x-card x-stack x-dense">
+          <h4 class="x-h4">x-dense</h4>
+          <p class="x-body">Everything tightens up. Cards, buttons, gaps — all compact.</p>
+          <button class="x-btn">Action</button>
+        </article>
+
+        <!-- Spacious -->
+        <article class="x-card x-stack x-spacious">
+          <h4 class="x-h4">x-spacious</h4>
+          <p class="x-body">Extra breathing room everywhere.</p>
+          <button class="x-btn">Action</button>
+        </article>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- Section: Navigation -->
+    <section class="x-stack">
+      <h2 class="x-h2">Navigation</h2>
+      <p class="x-body">Auto-styled links with aria-current support. No active class needed.</p>
+
+      <nav class="x-nav">
+        <a href="#" aria-current="page">Dashboard</a>
+        <a href="#">Analytics</a>
+        <a href="#">Reports</a>
+        <a href="#">Settings</a>
+      </nav>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- Section: Typography -->
+    <section class="x-stack">
+      <h2 class="x-h2">Typography</h2>
+      <div class="x-stack">
+        <p class="x-display">x-display</p>
+        <h1 class="x-h1">x-h1 Heading</h1>
+        <h2 class="x-h2">x-h2 Heading</h2>
+        <h3 class="x-h3">x-h3 Heading</h3>
+        <h4 class="x-h4">x-h4 Heading</h4>
+        <h5 class="x-h5">x-h5 Heading</h5>
+        <h6 class="x-h6">x-h6 Heading</h6>
+        <p class="x-lead">x-lead — Emphasized intro paragraph with larger size.</p>
+        <p class="x-body">x-body — Standard body text at 1rem with relaxed line height.</p>
+        <p class="x-small">x-small — Smaller text for secondary content.</p>
+        <p class="x-caption">x-caption — Captions, metadata, timestamps.</p>
+        <p class="x-label">x-label — Labels and smallest text.</p>
+        <code class="x-code">x-code — inline code</code>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- Section: Components -->
+    <section class="x-stack">
+      <h2 class="x-h2">Components</h2>
+
+      <div class="x-stack">
+        <h3 class="x-h3">Buttons</h3>
+        <div class="x-row">
+          <button class="x-btn">Primary</button>
+          <button class="x-btn-ghost">Ghost</button>
+          <button class="x-btn-outline">Outline</button>
+          <button class="x-btn" disabled>Disabled</button>
+        </div>
+      </div>
+
+      <div class="x-stack">
+        <h3 class="x-h3">Badges</h3>
+        <div class="x-row">
+          <span class="x-badge">Default</span>
+          <span class="x-badge x-text-success">Success</span>
+          <span class="x-badge x-text-warning">Warning</span>
+          <span class="x-badge x-text-error">Error</span>
+        </div>
+        <h3 class="x-h3">Badge in heading <span class="x-badge">Live</span></h3>
+      </div>
+
+      <div class="x-stack">
+        <h3 class="x-h3">Inputs</h3>
+        <div class="x-block-2">
+          <input class="x-input" type="text" placeholder="Text input">
+          <input class="x-input" type="email" placeholder="Email input">
+        </div>
+      </div>
+
+      <div class="x-stack">
+        <h3 class="x-h3">Avatars</h3>
+        <div class="x-row">
+          <div class="x-avatar">AC</div>
+          <div class="x-avatar" style="--x-accent: var(--x-success);">NS</div>
+          <div class="x-avatar" style="--x-accent: var(--x-warning);">XC</div>
+        </div>
+      </div>
+
+      <div class="x-stack">
+        <h3 class="x-h3">Links</h3>
+        <p class="x-body">
+          Read the <a class="x-link" href="#">documentation</a>,
+          check the <a class="x-link" href="#">source on GitHub</a>,
+          or install from <a class="x-link" href="#">npm</a>.
+        </p>
+      </div>
+
+      <div class="x-stack">
+        <h3 class="x-h3">Code Block</h3>
+        <pre class="x-pre">npm install xandra
+npm install -D xandra-cc
+npx xcc check src/</pre>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- Section: Colors -->
+    <section class="x-stack">
+      <h2 class="x-h2">Color System</h2>
+
+      <h3 class="x-h3">Backgrounds</h3>
+      <div class="x-block-4">
+        <div class="x-card x-bg-base x-border"><p class="x-caption">x-bg-base</p></div>
+        <div class="x-card x-bg-surface"><p class="x-caption">x-bg-surface</p></div>
+        <div class="x-card x-bg-elevated"><p class="x-caption">x-bg-elevated</p></div>
+        <div class="x-card x-bg-primary"><p class="x-caption x-text-inverse">x-bg-primary</p></div>
+      </div>
+
+      <h3 class="x-h3">Semantic States</h3>
+      <div class="x-block-3">
+        <div class="x-card x-bg-success"><p class="x-label x-text-success">x-bg-success + x-text-success</p></div>
+        <div class="x-card x-bg-warning"><p class="x-label x-text-warning">x-bg-warning + x-text-warning</p></div>
+        <div class="x-card x-bg-error"><p class="x-label x-text-error">x-bg-error + x-text-error</p></div>
+      </div>
+
+      <h3 class="x-h3">Text Colors</h3>
+      <div class="x-card x-stack">
+        <p class="x-text-primary">x-text-primary — Main content text</p>
+        <p class="x-text-secondary">x-text-secondary — Supporting text</p>
+        <p class="x-text-muted">x-text-muted — Dimmed, tertiary text</p>
+        <p class="x-accent">x-accent — Accent/emphasis color</p>
+        <p class="x-text-success">x-text-success — Success state</p>
+        <p class="x-text-warning">x-text-warning — Warning state</p>
+        <p class="x-text-error">x-text-error — Error state</p>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- Section: Themes -->
+    <section class="x-stack">
+      <h2 class="x-h2">Themes</h2>
+      <p class="x-body">Four built-in themes. Apply to any container — themes cascade and nest.</p>
+
+      <div class="x-block-2">
+        <div class="x-theme-dark x-bg-base x-card x-stack x-pad-4">
+          <h4 class="x-h4 x-text-primary">x-theme-dark</h4>
+          <p class="x-caption x-text-muted">Default theme. Deep backgrounds, bright text.</p>
+          <div class="x-row">
+            <button class="x-btn">Button</button>
+            <span class="x-badge">Badge</span>
+          </div>
+        </div>
+        <div class="x-theme-light x-bg-base x-card x-stack x-pad-4">
+          <h4 class="x-h4 x-text-primary">x-theme-light</h4>
+          <p class="x-caption x-text-muted">Light backgrounds, dark text.</p>
+          <div class="x-row">
+            <button class="x-btn">Button</button>
+            <span class="x-badge">Badge</span>
+          </div>
+        </div>
+        <div class="x-theme-nvg x-bg-base x-card x-stack x-pad-4">
+          <h4 class="x-h4 x-text-primary">x-theme-nvg</h4>
+          <p class="x-caption x-text-muted">Night vision green. Tactical.</p>
+          <div class="x-row">
+            <button class="x-btn">Button</button>
+            <span class="x-badge">Badge</span>
+          </div>
+        </div>
+        <div class="x-theme-high-contrast x-bg-base x-card x-stack x-pad-4">
+          <h4 class="x-h4 x-text-primary">x-theme-high-contrast</h4>
+          <p class="x-caption x-text-muted">Maximum contrast for accessibility.</p>
+          <div class="x-row">
+            <button class="x-btn">Button</button>
+            <span class="x-badge">Badge</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- Section: NS System -->
+    <section class="x-stack">
+      <h2 class="x-h2">The NS System</h2>
+      <p class="x-body">When you need something outside the standard, you mark it. Every deviation is tracked, audited, and eventually promoted.</p>
+
+      <div class="x-block-2">
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Standard</h4>
+          <p class="x-caption x-text-muted">No marker needed. This is the Xandra way.</p>
+          <pre class="x-pre">&lt;div class="x-card x-stack"&gt;
+  &lt;h3 class="x-h3"&gt;Title&lt;/h3&gt;
+  &lt;p class="x-body"&gt;Content&lt;/p&gt;
+&lt;/div&gt;</pre>
+        </article>
+
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Deviation</h4>
+          <p class="x-caption x-text-muted">Marked with ns + reason. Tracked by xcc audit.</p>
+          <pre class="x-pre">&lt;div class="x-card" ns
+  data-ns="needs chart.js"&gt;
+  &lt;canvas id="chart"&gt;&lt;/canvas&gt;
+&lt;/div&gt;</pre>
+        </article>
+      </div>
+
+      <pre class="x-pre">$ npx xcc audit
+NS AUDIT (5 elements across 3 files)
+
+Suggestions:
+  → "needs chart component" appears 7 times
+    — candidate for x-chart-component
+
+$ npx xcc promote
+PROMOTION CANDIDATES
+  1. x-chart-component — 7 times across 4 files</pre>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- Section: Ecosystem -->
+    <section class="x-stack">
+      <h2 class="x-h2">Ecosystem</h2>
+      <div class="x-block-3">
+        <article class="x-card x-stack">
+          <header>xandra</header>
+          <p>CSS framework. ~85 classes. Zero JS. Zero dependencies.</p>
+          <footer>
+            <code class="x-code">npm install xandra</code>
+          </footer>
+        </article>
+        <article class="x-card x-stack">
+          <header>xandra-cc</header>
+          <p>Contract compiler. 7 commands. Validates, audits, graphs, promotes.</p>
+          <footer>
+            <code class="x-code">npm install -D xandra-cc</code>
+          </footer>
+        </article>
+        <article class="x-card x-stack">
+          <header>vscode-xandra</header>
+          <p>VSCode extension. Completions, diagnostics, hover docs, ns tracking.</p>
+          <footer>
+            <code class="x-code">Search "Xandra CSS" in VSCode</code>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="x-between x-pad-4 x-border-subtle">
+      <p class="x-caption">Built with Xandra by NoirSystems</p>
+      <div class="x-row">
+        <a class="x-link" href="https://github.com/NoirSystems/Xandra">GitHub</a>
+        <a class="x-link" href="https://www.npmjs.com/package/xandra">npm</a>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

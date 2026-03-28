@@ -4,6 +4,11 @@
   "description": "Xandra CSS Framework - A standardization contract for consistent UI",
   "main": "dist/xandra.css",
   "style": "dist/xandra.css",
+  "files": [
+    "dist/",
+    "src/",
+    "README.md"
+  ],
   "exports": {
     ".": {
       "import": "./dist/xandra.css",

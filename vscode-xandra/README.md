@@ -73,7 +73,7 @@ A shield icon in the status bar shows that Xandra validation is active. Click it
 
 Install xcc:
 ```bash
-npm install -D xcc
+npm install -D xandra-cc
 ```
 
 ## Settings
@@ -139,4 +139,4 @@ The extension bundles to a single 29KB file via esbuild. Zero runtime dependenci
 
 ## License
 
-MIT
+Apache 2.0

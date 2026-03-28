@@ -3,7 +3,7 @@
 **TypeScript for CSS.** Validates your HTML against the Xandra design contract. Catches conflicts, tracks deviations, maps compositions, and evolves your design system from evidence.
 
 ```bash
-npm install -D xcc
+npm install -D xandra-cc
 ```
 
 ```bash

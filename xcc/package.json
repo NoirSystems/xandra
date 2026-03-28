@@ -1,5 +1,5 @@
 {
-  "name": "xcc",
+  "name": "xandra-cc",
   "version": "1.1.0",
   "description": "Xandra Contract Compiler — TypeScript for CSS. Validates HTML against the Xandra design contract.",
   "type": "module",
@@ -11,6 +11,12 @@
     "start": "node bin/xcc.js",
     "test": "node --test src/**/*.test.js"
   },
+  "files": [
+    "bin/",
+    "src/",
+    "framework/",
+    "README.md"
+  ],
   "keywords": ["css", "design-system", "linter", "audit", "xandra"],
   "license": "Apache-2.0",
   "dependencies": {
