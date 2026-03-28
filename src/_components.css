@@ -155,7 +155,8 @@
 .x-card {
   container-type: inline-size;
 
-  padding: var(--x-space-4);
+  --_card-pad: var(--x-space-4);
+  padding: var(--_card-pad);
 
   background-color: var(--x-bg-surface);
   border: 1px solid var(--x-border-subtle);
@@ -168,13 +169,13 @@
 /* Card adapts padding based on its own container size */
 @container (min-width: 400px) {
   .x-card {
-    padding: var(--x-space-5);
+    --_card-pad: var(--x-space-5);
   }
 }
 
 @container (min-width: 600px) {
   .x-card {
-    padding: var(--x-space-6);
+    --_card-pad: var(--x-space-6);
   }
 }
 
@@ -183,7 +184,8 @@
    Card recognizes semantic HTML structure
    ========================================== */
 
-.x-card > header {
+/* Implicit child styling uses :not([class]) so explicit classes always win */
+.x-card > header:not([class]) {
   font-family: var(--x-font-sans);
   font-size: var(--x-text-h4);
   font-weight: 600;
@@ -194,7 +196,7 @@
   margin-bottom: var(--x-space-3);
 }
 
-.x-card > footer {
+.x-card > footer:not([class]) {
   font-size: var(--x-text-caption);
   color: var(--x-text-muted);
   padding-top: var(--x-space-3);
@@ -202,19 +204,19 @@
   margin-top: var(--x-space-3);
 }
 
-/* First media in card goes edge-to-edge */
+/* First media in card goes edge-to-edge (uses --_card-pad for adaptive padding) */
 .x-card > img:first-child,
 .x-card > picture:first-child,
 .x-card > video:first-child {
-  margin: calc(-1 * var(--x-space-4)) calc(-1 * var(--x-space-4)) 0;
-  width: calc(100% + var(--x-space-4) * 2);
+  margin: calc(-1 * var(--_card-pad)) calc(-1 * var(--_card-pad)) 0;
+  width: calc(100% + var(--_card-pad) * 2);
   max-width: none;
   border-radius: var(--x-radius-md) var(--x-radius-md) 0 0;
   object-fit: cover;
 }
 
-/* Paragraphs in cards use body styling */
-.x-card > p {
+/* Classless paragraphs in cards use body styling; explicit classes always win */
+.x-card > p:not([class]) {
   font-size: var(--x-text-body);
   line-height: var(--x-leading-relaxed);
   color: var(--x-text-secondary);
@@ -346,7 +348,6 @@
   font-size: var(--x-text-label);
   font-weight: 500;
   line-height: 1;
-  color: var(--x-text-primary);
 
   background-color: var(--x-bg-elevated);
   border-radius: var(--x-radius-full);

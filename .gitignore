@@ -13,3 +13,6 @@ xcc/node_modules/
 vscode-xandra/out/
 vscode-xandra/node_modules/
 vscode-xandra/*.vsix
+
+# Deploy site (separate git repo for VPS push)
+site/
