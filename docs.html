@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en" class="x-theme-dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xandra CSS — Documentation</title>
+  <link rel="stylesheet" href="dist/xandra.css">
+  <style>
+    /* Docs-specific styles (ns: documentation layout needs) */
+    .doc-nav { position: sticky; top: 0; z-index: 100; }
+    .doc-anchor { scroll-margin-top: 4rem; }
+    .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--x-space-4); }
+    .doc-swatch { width: 3rem; height: 3rem; border-radius: var(--x-radius-md); flex-shrink: 0; }
+    .doc-token { font-family: var(--x-font-mono); font-size: var(--x-text-caption); color: var(--x-text-muted); }
+    .doc-css { font-family: var(--x-font-mono); font-size: 0.8rem; color: var(--x-text-muted); line-height: 1.6; white-space: pre-wrap; }
+    @media (max-width: 600px) { .doc-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="x-bg-base x-text-primary">
+
+  <!-- Top nav -->
+  <header class="doc-nav x-bg-surface x-border-subtle x-pad-3">
+    <div class="x-block-1 x-between">
+      <a href="index.html" class="x-h4" style="text-decoration:none;">Xandra</a>
+      <nav class="x-nav">
+        <a href="#getting-started" aria-current="page">Docs</a>
+        <a href="index.html">Demo</a>
+        <a href="https://github.com/NoirSystems/Xandra">GitHub</a>
+        <a href="https://www.npmjs.com/package/xandra">npm</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="x-block-1 x-stack x-pad-5">
+
+    <!-- Hero -->
+    <div class="x-stack x-pad-6 doc-anchor" id="getting-started">
+      <h1 class="x-display">Documentation</h1>
+      <p class="x-lead">Everything you need to build with Xandra. ~85 classes. Zero JavaScript. One philosophy: constraint breeds consistency.</p>
+    </div>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- GETTING STARTED -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="install">
+      <h2 class="x-h2">Getting Started</h2>
+
+      <div class="x-stack">
+        <h3 class="x-h3">Install</h3>
+        <pre class="x-pre">npm install xandra</pre>
+        <p class="x-body">Then import in your HTML, build tool, or framework:</p>
+        <pre class="x-pre">&lt;!-- HTML --&gt;
+&lt;link rel="stylesheet" href="node_modules/xandra/dist/xandra.css"&gt;
+
+/* CSS / PostCSS / Vite */
+@import 'xandra';
+
+/* JavaScript bundler */
+import 'xandra';</pre>
+      </div>
+
+      <div class="x-stack">
+        <h3 class="x-h3">CDN</h3>
+        <pre class="x-pre">&lt;link rel="stylesheet" href="https://unpkg.com/xandra/dist/xandra.min.css"&gt;</pre>
+      </div>
+
+      <div class="x-stack">
+        <h3 class="x-h3">Minimal page</h3>
+        <pre class="x-pre">&lt;!DOCTYPE html&gt;
+&lt;html lang="en" class="x-theme-dark"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;link rel="stylesheet" href="xandra.css"&gt;
+&lt;/head&gt;
+&lt;body class="x-bg-base x-text-primary"&gt;
+
+  &lt;main class="x-block-1 x-stack x-pad-5"&gt;
+    &lt;h1 class="x-h1"&gt;Hello Xandra&lt;/h1&gt;
+    &lt;p class="x-body"&gt;You're up and running.&lt;/p&gt;
+    &lt;button class="x-btn"&gt;Get Started&lt;/button&gt;
+  &lt;/main&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- PHILOSOPHY -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="philosophy">
+      <h2 class="x-h2">Philosophy</h2>
+      <p class="x-body">Xandra is not a utility framework. It's a <strong>standardization contract</strong>.</p>
+
+      <div class="x-block-2">
+        <article class="x-card x-stack">
+          <h4 class="x-h4">One class = one decision</h4>
+          <p class="x-body">Each class is a complete visual contract. <code class="x-code">x-card</code> isn't just "background + border" — it's a self-responsive container with adaptive padding, implicit child styling, and theme integration.</p>
+        </article>
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Constraint over freedom</h4>
+          <p class="x-body">You can't write <code class="x-code">x-flex</code> or <code class="x-code">x-justify-center</code>. Xandra gives you compositions (<code class="x-code">x-row</code>, <code class="x-code">x-between</code>) not CSS property wrappers. Fewer choices, faster decisions.</p>
+        </article>
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Deviation is tracked</h4>
+          <p class="x-body">When you need something outside the standard, you mark it with <code class="x-code">[ns]</code>. Every deviation is tracked, audited, and eventually promoted into a new standard class.</p>
+        </article>
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Zero JavaScript</h4>
+          <p class="x-body">CSS custom properties, container queries, and modern selectors handle everything. No runtime. No hydration. No bundle size.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- TYPOGRAPHY -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="typography">
+      <h2 class="x-h2">Typography <span class="x-badge">13 classes</span></h2>
+      <p class="x-body">All type classes use <code class="x-code">clamp()</code> for fluid responsive sizing. One class per element — no stacking type classes.</p>
+
+      <div class="x-card x-stack">
+        <div class="x-stack">
+          <div class="x-between">
+            <p class="x-display">x-display</p>
+            <span class="doc-css">clamp(2.5rem, 6vw + 1rem, 4.5rem) / 800</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <h1 class="x-h1">x-h1</h1>
+            <span class="doc-css">clamp(2rem, 5vw + 1rem, 3.5rem) / 700</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <h2 class="x-h2">x-h2</h2>
+            <span class="doc-css">clamp(1.5rem, 3vw + 0.75rem, 2.5rem) / 600</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <h3 class="x-h3">x-h3</h3>
+            <span class="doc-css">clamp(1.25rem, 2vw + 0.5rem, 2rem) / 600</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <h4 class="x-h4">x-h4</h4>
+            <span class="doc-css">clamp(1.125rem, 1vw + 0.5rem, 1.5rem) / 600</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <h5 class="x-h5">x-h5</h5>
+            <span class="doc-css">clamp(1rem, 0.5vw + 0.5rem, 1.25rem) / 500</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <h6 class="x-h6">x-h6</h6>
+            <span class="doc-css">clamp(0.875rem, 0.25vw + 0.5rem, 1rem) / 500</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="x-card x-stack">
+        <div class="x-between">
+          <p class="x-lead">x-lead — Emphasized intro paragraph</p>
+          <span class="doc-css">color: secondary</span>
+        </div>
+        <div class="x-divider"></div>
+        <div class="x-between">
+          <p class="x-body">x-body — Standard body text</p>
+          <span class="doc-css">color: secondary</span>
+        </div>
+        <div class="x-divider"></div>
+        <div class="x-between">
+          <p class="x-small">x-small — Fine print, disclaimers</p>
+          <span class="doc-css">color: muted</span>
+        </div>
+        <div class="x-divider"></div>
+        <div class="x-between">
+          <p class="x-caption">x-caption — Captions, metadata</p>
+          <span class="doc-css">color: muted</span>
+        </div>
+        <div class="x-divider"></div>
+        <div class="x-between">
+          <p class="x-label">x-label — Labels, smallest text</p>
+          <span class="doc-css">uppercase / wide tracking</span>
+        </div>
+        <div class="x-divider"></div>
+        <div class="x-between">
+          <p class="x-mono">x-mono — Monospace content</p>
+          <span class="doc-css">font-family: mono / 0.9em</span>
+        </div>
+      </div>
+
+      <pre class="x-pre">&lt;h1 class="x-h1"&gt;Page Title&lt;/h1&gt;
+&lt;p class="x-lead"&gt;Intro paragraph with larger text.&lt;/p&gt;
+&lt;p class="x-body"&gt;Standard body content.&lt;/p&gt;
+&lt;p class="x-caption"&gt;Posted on March 28, 2026&lt;/p&gt;</pre>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- LAYOUT -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="layout">
+      <h2 class="x-h2">Layout <span class="x-badge">12 classes</span></h2>
+      <p class="x-body">Flexbox and grid compositions with container queries. Components adapt to their container, not the viewport.</p>
+
+      <h3 class="x-h3">Flex Layouts</h3>
+
+      <div class="x-block-2">
+        <article class="x-card x-stack">
+          <h4 class="x-h4">x-stack</h4>
+          <p class="x-caption x-text-muted">Vertical flex column with gap</p>
+          <pre class="x-pre">display: flex
+flex-direction: column
+gap: var(--x-space-4)</pre>
+          <div class="x-stack x-bg-elevated x-pad-3 x-round-md">
+            <div class="x-bg-surface x-pad-2 x-round-sm x-caption">Item 1</div>
+            <div class="x-bg-surface x-pad-2 x-round-sm x-caption">Item 2</div>
+            <div class="x-bg-surface x-pad-2 x-round-sm x-caption">Item 3</div>
+          </div>
+        </article>
+
+        <article class="x-card x-stack">
+          <h4 class="x-h4">x-row</h4>
+          <p class="x-caption x-text-muted">Horizontal flex with wrap and gap</p>
+          <pre class="x-pre">display: flex
+flex-wrap: wrap
+align-items: center
+gap: var(--x-space-4)</pre>
+          <div class="x-row x-bg-elevated x-pad-3 x-round-md">
+            <div class="x-bg-surface x-pad-2 x-round-sm x-caption">A</div>
+            <div class="x-bg-surface x-pad-2 x-round-sm x-caption">B</div>
+            <div class="x-bg-surface x-pad-2 x-round-sm x-caption">C</div>
+          </div>
+        </article>
+
+        <article class="x-card x-stack">
+          <h4 class="x-h4">x-between</h4>
+          <p class="x-caption x-text-muted">Space-between, stacks below 400px container width</p>
+          <pre class="x-pre">justify-content: space-between
+@container (&lt;400px) → column</pre>
+          <div class="x-between x-bg-elevated x-pad-3 x-round-md">
+            <span class="x-caption">Left</span>
+            <span class="x-caption">Right</span>
+          </div>
+        </article>
+
+        <article class="x-card x-stack">
+          <h4 class="x-h4">x-center</h4>
+          <p class="x-caption x-text-muted">Center content on both axes</p>
+          <pre class="x-pre">justify-content: center
+align-items: center</pre>
+          <div class="x-center x-bg-elevated x-pad-4 x-round-md" style="min-height:80px;">
+            <span class="x-caption">Centered</span>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="x-h3">Block System (Grid)</h3>
+      <p class="x-body">Responsive grids powered by container queries. Columns collapse based on the container's width, not the viewport.</p>
+
+      <div class="x-card x-stack">
+        <div class="x-stack">
+          <div class="x-between">
+            <code class="x-code">x-block-1</code>
+            <span class="x-caption x-text-muted">max-width: 1200px, centered</span>
+          </div>
+          <div class="x-between">
+            <code class="x-code">x-block-prose</code>
+            <span class="x-caption x-text-muted">max-width: 65ch, optimized for reading</span>
+          </div>
+          <div class="x-between">
+            <code class="x-code">x-block-wide</code>
+            <span class="x-caption x-text-muted">max-width: 1400px, centered</span>
+          </div>
+          <div class="x-between">
+            <code class="x-code">x-block-full</code>
+            <span class="x-caption x-text-muted">100% width with inline padding</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <code class="x-code">x-block-2</code>
+            <span class="x-caption x-text-muted">2-col grid → 1-col below 500px</span>
+          </div>
+          <div class="x-between">
+            <code class="x-code">x-block-3</code>
+            <span class="x-caption x-text-muted">3-col → 2-col below 768px → 1-col below 500px</span>
+          </div>
+          <div class="x-between">
+            <code class="x-code">x-block-4</code>
+            <span class="x-caption x-text-muted">4-col → 2-col below 900px → 1-col below 500px</span>
+          </div>
+        </div>
+      </div>
+
+      <pre class="x-pre">&lt;main class="x-block-1 x-stack x-pad-5"&gt;
+  &lt;div class="x-block-3"&gt;
+    &lt;article class="x-card"&gt;...&lt;/article&gt;
+    &lt;article class="x-card"&gt;...&lt;/article&gt;
+    &lt;article class="x-card"&gt;...&lt;/article&gt;
+  &lt;/div&gt;
+&lt;/main&gt;</pre>
+
+      <h3 class="x-h3">Visibility</h3>
+      <div class="x-card x-stack">
+        <div class="x-between">
+          <code class="x-code">x-hidden</code>
+          <span class="x-caption x-text-muted">display: none</span>
+        </div>
+        <div class="x-between">
+          <code class="x-code">x-sr-only</code>
+          <span class="x-caption x-text-muted">Visually hidden, accessible to screen readers</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- SPACING -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="spacing">
+      <h2 class="x-h2">Spacing <span class="x-badge">20 classes</span></h2>
+      <p class="x-body">All spacing uses CSS custom properties from a 4px base scale. Density modifiers override the entire scale locally.</p>
+
+      <div class="x-card x-stack">
+        <h4 class="x-h4">Scale</h4>
+        <div class="x-stack">
+          <div class="x-between">
+            <span class="x-caption">1</span>
+            <div class="x-row" style="gap: var(--x-space-2);">
+              <div class="x-bg-primary x-round-sm" style="width: 0.25rem; height: 1rem;"></div>
+              <span class="doc-token">0.25rem (4px)</span>
+            </div>
+          </div>
+          <div class="x-between">
+            <span class="x-caption">2</span>
+            <div class="x-row" style="gap: var(--x-space-2);">
+              <div class="x-bg-primary x-round-sm" style="width: 0.5rem; height: 1rem;"></div>
+              <span class="doc-token">0.5rem (8px)</span>
+            </div>
+          </div>
+          <div class="x-between">
+            <span class="x-caption">3</span>
+            <div class="x-row" style="gap: var(--x-space-2);">
+              <div class="x-bg-primary x-round-sm" style="width: 0.75rem; height: 1rem;"></div>
+              <span class="doc-token">0.75rem (12px)</span>
+            </div>
+          </div>
+          <div class="x-between">
+            <span class="x-caption">4</span>
+            <div class="x-row" style="gap: var(--x-space-2);">
+              <div class="x-bg-primary x-round-sm" style="width: 1rem; height: 1rem;"></div>
+              <span class="doc-token">1rem (16px)</span>
+            </div>
+          </div>
+          <div class="x-between">
+            <span class="x-caption">5</span>
+            <div class="x-row" style="gap: var(--x-space-2);">
+              <div class="x-bg-primary x-round-sm" style="width: 1.5rem; height: 1rem;"></div>
+              <span class="doc-token">1.5rem (24px)</span>
+            </div>
+          </div>
+          <div class="x-between">
+            <span class="x-caption">6</span>
+            <div class="x-row" style="gap: var(--x-space-2);">
+              <div class="x-bg-primary x-round-sm" style="width: 2rem; height: 1rem;"></div>
+              <span class="doc-token">2rem (32px)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="x-block-2">
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Padding</h4>
+          <p class="x-caption x-text-muted">All sides. <code class="x-code">x-pad-1</code> through <code class="x-code">x-pad-6</code></p>
+        </div>
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Gap</h4>
+          <p class="x-caption x-text-muted">Flex/grid gap. <code class="x-code">x-gap-1</code> through <code class="x-code">x-gap-6</code></p>
+        </div>
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Margin Top</h4>
+          <p class="x-caption x-text-muted">Vertical rhythm. <code class="x-code">x-mt-1</code> through <code class="x-code">x-mt-6</code></p>
+        </div>
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Margin Bottom</h4>
+          <p class="x-caption x-text-muted">Spacing after. <code class="x-code">x-mb-1</code> through <code class="x-code">x-mb-6</code></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- DENSITY -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="density">
+      <h2 class="x-h2">Density System <span class="x-badge">2 classes</span></h2>
+      <p class="x-body">One class on a parent. The entire subtree adapts. No size variants needed.</p>
+      <p class="x-body"><code class="x-code">x-dense</code> and <code class="x-code">x-spacious</code> override the spacing custom properties locally, so every component inside (buttons, cards, gaps, padding) scales automatically.</p>
+
+      <div class="x-block-3">
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Default</h4>
+          <p class="x-body">Standard spacing.</p>
+          <input class="x-input" placeholder="Input">
+          <button class="x-btn">Action</button>
+        </article>
+
+        <article class="x-card x-stack x-dense">
+          <h4 class="x-h4">x-dense</h4>
+          <p class="x-body">Everything tightens up.</p>
+          <input class="x-input" placeholder="Input">
+          <button class="x-btn">Action</button>
+        </article>
+
+        <article class="x-card x-stack x-spacious">
+          <h4 class="x-h4">x-spacious</h4>
+          <p class="x-body">Extra breathing room.</p>
+          <input class="x-input" placeholder="Input">
+          <button class="x-btn">Action</button>
+        </article>
+      </div>
+
+      <pre class="x-pre">&lt;!-- Apply to any container --&gt;
+&lt;div class="x-card x-stack x-dense"&gt;
+  &lt;!-- Everything inside is compact --&gt;
+&lt;/div&gt;
+
+&lt;!-- Or an entire section --&gt;
+&lt;section class="x-spacious"&gt;
+  &lt;!-- All descendants get wider spacing --&gt;
+&lt;/section&gt;</pre>
+
+      <div class="x-card x-stack">
+        <h4 class="x-h4">How it works</h4>
+        <p class="x-body">Density classes override <code class="x-code">--x-space-1</code> through <code class="x-code">--x-space-6</code> locally. Since every Xandra component uses these tokens for padding, gap, and margin, the entire subtree adapts.</p>
+        <pre class="x-pre">.x-dense {
+  --x-space-1: 0.125rem;  /* 2px instead of 4px */
+  --x-space-2: 0.25rem;   /* 4px instead of 8px */
+  --x-space-3: 0.5rem;    /* 8px instead of 12px */
+  --x-space-4: 0.75rem;   /* 12px instead of 16px */
+  --x-space-5: 1rem;      /* 16px instead of 24px */
+  --x-space-6: 1.5rem;    /* 24px instead of 32px */
+}</pre>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- COLORS -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="colors">
+      <h2 class="x-h2">Colors <span class="x-badge">18 classes</span></h2>
+      <p class="x-body">Semantic color tokens — every color has a purpose. All theme-aware via CSS custom properties.</p>
+
+      <h3 class="x-h3">Backgrounds</h3>
+      <div class="x-block-4">
+        <div class="x-card x-bg-base x-border x-stack">
+          <div class="doc-swatch x-bg-base x-border"></div>
+          <code class="x-code">x-bg-base</code>
+          <span class="x-caption x-text-muted">Page background</span>
+        </div>
+        <div class="x-card x-stack">
+          <div class="doc-swatch x-bg-surface x-round-md"></div>
+          <code class="x-code">x-bg-surface</code>
+          <span class="x-caption x-text-muted">Cards, sections</span>
+        </div>
+        <div class="x-card x-stack">
+          <div class="doc-swatch x-bg-elevated x-round-md"></div>
+          <code class="x-code">x-bg-elevated</code>
+          <span class="x-caption x-text-muted">Dropdowns, hovers</span>
+        </div>
+        <div class="x-card x-stack">
+          <div class="doc-swatch x-bg-primary x-round-md"></div>
+          <code class="x-code">x-bg-primary</code>
+          <span class="x-caption x-text-muted">Primary actions</span>
+        </div>
+      </div>
+
+      <h3 class="x-h3">Semantic States</h3>
+      <div class="x-block-3">
+        <div class="x-card x-bg-success x-stack">
+          <code class="x-code">x-bg-success</code>
+          <span class="x-caption x-text-success">Muted green background</span>
+        </div>
+        <div class="x-card x-bg-warning x-stack">
+          <code class="x-code">x-bg-warning</code>
+          <span class="x-caption x-text-warning">Muted amber background</span>
+        </div>
+        <div class="x-card x-bg-error x-stack">
+          <code class="x-code">x-bg-error</code>
+          <span class="x-caption x-text-error">Muted red background</span>
+        </div>
+      </div>
+
+      <h3 class="x-h3">Text Colors</h3>
+      <div class="x-card x-stack">
+        <p class="x-text-primary">x-text-primary — Main content text</p>
+        <p class="x-text-secondary">x-text-secondary — Supporting text</p>
+        <p class="x-text-muted">x-text-muted — Dimmed, tertiary text</p>
+        <p class="x-text-inverse x-bg-primary x-pad-2 x-round-sm">x-text-inverse — Inverted (on primary bg)</p>
+        <p class="x-accent">x-accent — Interactive/emphasis color</p>
+        <p class="x-text-success">x-text-success — Success state</p>
+        <p class="x-text-warning">x-text-warning — Warning state</p>
+        <p class="x-text-error">x-text-error — Error state</p>
+      </div>
+
+      <h3 class="x-h3">Borders</h3>
+      <div class="x-block-3">
+        <div class="x-pad-4 x-border-subtle x-round-md"><code class="x-code">x-border-subtle</code></div>
+        <div class="x-pad-4 x-border x-round-md"><code class="x-code">x-border</code></div>
+        <div class="x-pad-4 x-border-strong x-round-md"><code class="x-code">x-border-strong</code></div>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- UTILITIES -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="utilities">
+      <h2 class="x-h2">Utilities <span class="x-badge">8 classes</span></h2>
+
+      <div class="x-block-2">
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Border Radius</h4>
+          <div class="x-row">
+            <div class="x-bg-primary x-round-sm" style="width:3rem;height:3rem;"></div>
+            <div class="x-bg-primary x-round-md" style="width:3rem;height:3rem;"></div>
+            <div class="x-bg-primary x-round-lg" style="width:3rem;height:3rem;"></div>
+            <div class="x-bg-primary x-round-full" style="width:3rem;height:3rem;"></div>
+          </div>
+          <p class="x-caption x-text-muted">x-round-sm (4px), x-round-md (8px), x-round-lg (12px), x-round-full (pill)</p>
+        </div>
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Shadows</h4>
+          <div class="x-row">
+            <div class="x-bg-surface x-shadow-sm x-round-md x-pad-3 x-caption">sm</div>
+            <div class="x-bg-surface x-shadow-md x-round-md x-pad-3 x-caption">md</div>
+            <div class="x-bg-surface x-shadow-lg x-round-md x-pad-3 x-caption">lg</div>
+          </div>
+          <p class="x-caption x-text-muted">Theme-aware shadows using --x-shadow-color and --x-shadow-strength</p>
+        </div>
+      </div>
+
+      <div class="x-card x-stack">
+        <div class="x-between">
+          <code class="x-code">x-overflow-auto</code>
+          <span class="x-caption x-text-muted">overflow: auto — for scrollable containers</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- COMPONENTS -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="components">
+      <h2 class="x-h2">Components <span class="x-badge">12 classes</span></h2>
+
+      <!-- Buttons -->
+      <div class="x-stack">
+        <h3 class="x-h3">Buttons</h3>
+        <p class="x-body">Three variants. Works on <code class="x-code">&lt;button&gt;</code> and <code class="x-code">&lt;a&gt;</code> elements.</p>
+        <div class="x-row">
+          <button class="x-btn">x-btn</button>
+          <button class="x-btn-ghost">x-btn-ghost</button>
+          <button class="x-btn-outline">x-btn-outline</button>
+          <button class="x-btn" disabled>Disabled</button>
+        </div>
+        <pre class="x-pre">&lt;button class="x-btn"&gt;Primary&lt;/button&gt;
+&lt;button class="x-btn-ghost"&gt;Ghost&lt;/button&gt;
+&lt;button class="x-btn-outline"&gt;Outline&lt;/button&gt;
+&lt;a class="x-btn" href="/action"&gt;Link as button&lt;/a&gt;</pre>
+      </div>
+
+      <div class="x-divider"></div>
+
+      <!-- Card -->
+      <div class="x-stack">
+        <h3 class="x-h3">Card</h3>
+        <p class="x-body">Self-responsive container. Padding adapts via container queries. Implicit child styling recognizes <code class="x-code">&lt;header&gt;</code>, <code class="x-code">&lt;footer&gt;</code>, <code class="x-code">&lt;p&gt;</code>, and first <code class="x-code">&lt;img&gt;</code>.</p>
+
+        <div class="x-block-3">
+          <article class="x-card">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=200&fit=crop" alt="Mountains">
+            <header>Media Card</header>
+            <p>Image goes edge-to-edge. Header and footer are auto-styled.</p>
+            <footer>
+              <button class="x-btn">Save</button>
+              <button class="x-btn-ghost">Cancel</button>
+            </footer>
+          </article>
+
+          <article class="x-card x-stack">
+            <h4 class="x-h4">Standard Card</h4>
+            <p class="x-body">Use <code class="x-code">x-card x-stack</code> for vertical layout with gap.</p>
+            <button class="x-btn">Action</button>
+          </article>
+
+          <article class="x-card">
+            <header>Stat Card</header>
+            <p class="x-display">2,847</p>
+            <footer>+18% this week</footer>
+          </article>
+        </div>
+
+        <pre class="x-pre">&lt;!-- Media card — no classes needed on children --&gt;
+&lt;article class="x-card"&gt;
+  &lt;img src="photo.jpg" alt="..."&gt;
+  &lt;header&gt;Title&lt;/header&gt;
+  &lt;p&gt;Description text.&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;button class="x-btn"&gt;Save&lt;/button&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;
+
+&lt;!-- Card with explicit classes override implicit styling --&gt;
+&lt;article class="x-card"&gt;
+  &lt;p class="x-display"&gt;1,247&lt;/p&gt;  &lt;!-- x-display wins over card's p styling --&gt;
+&lt;/article&gt;</pre>
+
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Implicit child rules</h4>
+          <div class="x-stack">
+            <div class="x-between">
+              <code class="x-code">.x-card &gt; header</code>
+              <span class="x-caption x-text-muted">h4 size, border-bottom separator</span>
+            </div>
+            <div class="x-between">
+              <code class="x-code">.x-card &gt; footer</code>
+              <span class="x-caption x-text-muted">caption size, border-top separator, muted color</span>
+            </div>
+            <div class="x-between">
+              <code class="x-code">.x-card &gt; p</code>
+              <span class="x-caption x-text-muted">body size, relaxed line-height, secondary color</span>
+            </div>
+            <div class="x-between">
+              <code class="x-code">.x-card &gt; img:first-child</code>
+              <span class="x-caption x-text-muted">Edge-to-edge, negative margins, cover fit</span>
+            </div>
+          </div>
+          <p class="x-caption x-text-muted">All implicit rules use <code class="x-code">:not([class])</code> — adding any class to a child element overrides the implicit styling.</p>
+        </div>
+      </div>
+
+      <div class="x-divider"></div>
+
+      <!-- Nav -->
+      <div class="x-stack">
+        <h3 class="x-h3">Navigation</h3>
+        <p class="x-body">Auto-styled links with <code class="x-code">aria-current</code> support. No active class needed.</p>
+        <nav class="x-nav">
+          <a href="#" aria-current="page">Dashboard</a>
+          <a href="#">Analytics</a>
+          <a href="#">Reports</a>
+          <a href="#">Settings</a>
+        </nav>
+        <pre class="x-pre">&lt;nav class="x-nav"&gt;
+  &lt;a href="/dashboard" aria-current="page"&gt;Dashboard&lt;/a&gt;
+  &lt;a href="/analytics"&gt;Analytics&lt;/a&gt;
+  &lt;a href="/reports"&gt;Reports&lt;/a&gt;
+&lt;/nav&gt;</pre>
+      </div>
+
+      <div class="x-divider"></div>
+
+      <!-- Input -->
+      <div class="x-stack">
+        <h3 class="x-h3">Input</h3>
+        <p class="x-body">Form inputs with focus rings, validation states via HTML5, and autofill theme matching.</p>
+        <div class="x-block-2">
+          <input class="x-input" type="text" placeholder="Text input">
+          <input class="x-input" type="email" placeholder="Email input">
+        </div>
+        <pre class="x-pre">&lt;input class="x-input" type="text" placeholder="Your name"&gt;
+&lt;input class="x-input" type="email" placeholder="you@example.com"&gt;</pre>
+      </div>
+
+      <div class="x-divider"></div>
+
+      <!-- Badge, Avatar, Link, Code -->
+      <div class="x-block-2">
+        <div class="x-card x-stack">
+          <h3 class="x-h3">Badge</h3>
+          <div class="x-row">
+            <span class="x-badge">Default</span>
+            <span class="x-badge x-text-success">Success</span>
+            <span class="x-badge x-text-warning">Warning</span>
+            <span class="x-badge x-text-error">Error</span>
+          </div>
+          <p class="x-caption x-text-muted">Combine with text color classes. Scales inside headings.</p>
+          <h4 class="x-h4">Heading <span class="x-badge">Live</span></h4>
+        </div>
+
+        <div class="x-card x-stack">
+          <h3 class="x-h3">Avatar</h3>
+          <div class="x-row">
+            <div class="x-avatar">AC</div>
+            <div class="x-avatar" style="--x-accent: var(--x-success);">NS</div>
+            <div class="x-avatar" style="--x-accent: var(--x-warning);">XC</div>
+          </div>
+          <p class="x-caption x-text-muted">Override <code class="x-code">--x-accent</code> for custom colors. Supports text initials or img children.</p>
+        </div>
+
+        <div class="x-card x-stack">
+          <h3 class="x-h3">Link</h3>
+          <p class="x-body">Read the <a class="x-link" href="#">documentation</a> or check the <a class="x-link" href="#">source</a>.</p>
+          <p class="x-caption x-text-muted">Underlined, accent colored, with hover and focus states.</p>
+        </div>
+
+        <div class="x-card x-stack">
+          <h3 class="x-h3">Code</h3>
+          <p class="x-body">Inline <code class="x-code">x-code</code> and block:</p>
+          <pre class="x-pre">npm install xandra
+npx xcc check src/</pre>
+        </div>
+      </div>
+
+      <div class="x-stack">
+        <h3 class="x-h3">Divider</h3>
+        <p class="x-body">A 1px horizontal separator using the subtle border color.</p>
+        <div class="x-divider"></div>
+        <pre class="x-pre">&lt;div class="x-divider"&gt;&lt;/div&gt;</pre>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- THEMES -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="themes">
+      <h2 class="x-h2">Themes <span class="x-badge">4 themes</span></h2>
+      <p class="x-body">Apply a theme class to any container. Themes cascade and nest — you can have a light card inside a dark page.</p>
+
+      <div class="x-block-2">
+        <div class="x-theme-dark x-bg-base x-card x-stack x-pad-4">
+          <h4 class="x-h4 x-text-primary">x-theme-dark</h4>
+          <p class="x-caption x-text-muted">Default. Deep backgrounds, bright text.</p>
+          <div class="x-row">
+            <button class="x-btn">Button</button>
+            <span class="x-badge">Badge</span>
+            <input class="x-input" placeholder="Input" style="max-width:120px;">
+          </div>
+        </div>
+        <div class="x-theme-light x-bg-base x-card x-stack x-pad-4">
+          <h4 class="x-h4 x-text-primary">x-theme-light</h4>
+          <p class="x-caption x-text-muted">Light backgrounds, dark text.</p>
+          <div class="x-row">
+            <button class="x-btn">Button</button>
+            <span class="x-badge">Badge</span>
+            <input class="x-input" placeholder="Input" style="max-width:120px;">
+          </div>
+        </div>
+        <div class="x-theme-nvg x-bg-base x-card x-stack x-pad-4">
+          <h4 class="x-h4 x-text-primary">x-theme-nvg</h4>
+          <p class="x-caption x-text-muted">Night vision green. Tactical.</p>
+          <div class="x-row">
+            <button class="x-btn">Button</button>
+            <span class="x-badge">Badge</span>
+            <input class="x-input" placeholder="Input" style="max-width:120px;">
+          </div>
+        </div>
+        <div class="x-theme-high-contrast x-bg-base x-card x-stack x-pad-4">
+          <h4 class="x-h4 x-text-primary">x-theme-high-contrast</h4>
+          <p class="x-caption x-text-muted">Maximum contrast for accessibility.</p>
+          <div class="x-row">
+            <button class="x-btn">Button</button>
+            <span class="x-badge">Badge</span>
+            <input class="x-input" placeholder="Input" style="max-width:120px;">
+          </div>
+        </div>
+      </div>
+
+      <pre class="x-pre">&lt;!-- Set page theme --&gt;
+&lt;html class="x-theme-dark"&gt;
+
+&lt;!-- Nest themes --&gt;
+&lt;div class="x-theme-dark x-bg-base"&gt;
+  &lt;div class="x-theme-light x-bg-base x-card"&gt;
+    This card is light inside a dark page.
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- NS SYSTEM -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="ns-system">
+      <h2 class="x-h2">The NS System</h2>
+      <p class="x-body">NS (Non-Standard) is Xandra's deviation tracking system. When you need something outside the ~85 standard classes, you mark it. Every deviation is tracked, audited, and eventually promoted.</p>
+
+      <div class="x-block-2">
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Standard</h4>
+          <p class="x-caption x-text-muted">No marker needed. This is the Xandra way.</p>
+          <pre class="x-pre">&lt;div class="x-card x-stack"&gt;
+  &lt;h3 class="x-h3"&gt;Title&lt;/h3&gt;
+  &lt;p class="x-body"&gt;Content&lt;/p&gt;
+&lt;/div&gt;</pre>
+        </article>
+
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Leaf Deviation</h4>
+          <p class="x-caption x-text-muted">Single element needs custom CSS. Mark it and explain why.</p>
+          <pre class="x-pre">&lt;div class="x-card" ns
+  data-ns="needs chart.js canvas"&gt;
+  &lt;canvas id="chart"&gt;&lt;/canvas&gt;
+&lt;/div&gt;</pre>
+        </article>
+
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Boundary</h4>
+          <p class="x-caption x-text-muted">Third-party widget — everything inside is non-standard.</p>
+          <pre class="x-pre">&lt;div ns data-ns="Stripe Elements"
+  data-ns-boundary&gt;
+  &lt;!-- All children are implicitly ns --&gt;
+  &lt;div id="stripe-card"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </article>
+
+        <article class="x-card x-stack">
+          <h4 class="x-h4">Audit Mode</h4>
+          <p class="x-caption x-text-muted">Visual debugging — highlights all ns elements with reasons.</p>
+          <pre class="x-pre">&lt;!-- Toggle on html or body --&gt;
+&lt;html class="x-theme-dark x-audit"&gt;
+
+/* Or via JS */
+document.documentElement
+  .classList.toggle('x-audit');</pre>
+        </article>
+      </div>
+
+      <div class="x-card x-stack">
+        <h4 class="x-h4">The Promotion Loop</h4>
+        <p class="x-body">Deviations aren't permanent. When the same ns reason appears across enough files, xcc suggests promoting it to a standard class.</p>
+        <pre class="x-pre">$ npx xcc audit
+NS AUDIT (12 elements across 5 files)
+  "needs chart component" — 7 occurrences
+  "needs date picker"     — 3 occurrences
+  "stripe integration"    — 2 boundaries
+
+$ npx xcc promote
+PROMOTION CANDIDATES
+  1. x-chart — "needs chart component" (7 times, 4 files)
+     Suggested CSS skeleton generated.</pre>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- XCC COMPILER -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="compiler">
+      <h2 class="x-h2">Contract Compiler (xcc)</h2>
+      <p class="x-body">The compiler validates your HTML against the Xandra contract. It catches errors at build time, not in production.</p>
+
+      <pre class="x-pre">npm install -D xandra-cc</pre>
+
+      <div class="x-card x-stack">
+        <h4 class="x-h4">Commands</h4>
+        <div class="x-stack">
+          <div class="x-between">
+            <code class="x-code">xcc check [path]</code>
+            <span class="x-caption x-text-muted">Validate HTML against the contract</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <code class="x-code">xcc audit [path]</code>
+            <span class="x-caption x-text-muted">Analyze ns patterns, suggest new classes</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <code class="x-code">xcc audit --tree</code>
+            <span class="x-caption x-text-muted">Tree visualization of ns elements</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <code class="x-code">xcc graph [path]</code>
+            <span class="x-caption x-text-muted">Map parent-child composition patterns</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <code class="x-code">xcc optimize [path]</code>
+            <span class="x-caption x-text-muted">Tree-shake unused classes from CSS</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <code class="x-code">xcc promote [path]</code>
+            <span class="x-caption x-text-muted">Find ns patterns ready to standardize</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <code class="x-code">xcc docs [path]</code>
+            <span class="x-caption x-text-muted">Generate composition documentation</span>
+          </div>
+          <div class="x-divider"></div>
+          <div class="x-between">
+            <code class="x-code">xcc init</code>
+            <span class="x-caption x-text-muted">Create xandra.config.js</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="x-card x-stack">
+        <h4 class="x-h4">Validation Rules</h4>
+        <div class="x-stack">
+          <div class="x-between">
+            <span class="x-text-error x-caption">ERROR</span>
+            <span class="x-caption">ns without data-ns reason</span>
+          </div>
+          <div class="x-between">
+            <span class="x-text-error x-caption">ERROR</span>
+            <span class="x-caption">Conflicting classes (x-stack + x-row)</span>
+          </div>
+          <div class="x-between">
+            <span class="x-text-error x-caption">ERROR</span>
+            <span class="x-caption">Invalid composition (nested buttons)</span>
+          </div>
+          <div class="x-between">
+            <span class="x-text-warning x-caption">WARNING</span>
+            <span class="x-caption">Redundant classes (x-pad-3 + x-pad-5)</span>
+          </div>
+          <div class="x-between">
+            <span class="x-text-warning x-caption">WARNING</span>
+            <span class="x-caption">Unknown x- class</span>
+          </div>
+          <div class="x-between">
+            <span class="x-text-warning x-caption">WARNING</span>
+            <span class="x-caption">Double density (x-dense inside x-dense)</span>
+          </div>
+          <div class="x-between">
+            <span class="x-text-warning x-caption">WARNING</span>
+            <span class="x-caption">Non-x- class without ns marker</span>
+          </div>
+        </div>
+      </div>
+
+      <pre class="x-pre">$ npx xcc check src/
+xcc v1.1.1 — Xandra Contract Compiler
+
+Scanning 12 files...
+
+ERRORS (1)
+  src/pages/dashboard.html:47
+    ✕ x-stack + x-row — conflicting layout modes
+
+WARNINGS (2)
+  src/pages/dashboard.html:52
+    ⚠ x-pad-3 + x-pad-5 — multiple padding values
+  src/components/chart.html:18
+    ⚠ Non-x- class "chartjs-wrapper" without [ns]
+
+SUMMARY
+  12 files scanned
+  3 ns elements (3 with reasons)
+  1 error, 2 warnings</pre>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- DESIGN TOKENS -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="tokens">
+      <h2 class="x-h2">Design Tokens</h2>
+      <p class="x-body">Every value in Xandra is a CSS custom property. Override them to customize without touching source files.</p>
+
+      <div class="x-block-2">
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Spacing</h4>
+          <pre class="x-pre">--x-space-1: 0.25rem   /* 4px */
+--x-space-2: 0.5rem    /* 8px */
+--x-space-3: 0.75rem   /* 12px */
+--x-space-4: 1rem      /* 16px */
+--x-space-5: 1.5rem    /* 24px */
+--x-space-6: 2rem      /* 32px */</pre>
+        </div>
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Typography</h4>
+          <pre class="x-pre">--x-font-sans: system-ui, ...
+--x-font-mono: ui-monospace, ...
+--x-text-h1: clamp(2rem, 5vw+1rem, 3.5rem)
+--x-text-body: clamp(1rem, 0.5vw+0.75rem, 1.125rem)
+--x-text-caption: 0.875rem
+--x-text-label: 0.75rem</pre>
+        </div>
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Borders &amp; Radius</h4>
+          <pre class="x-pre">--x-radius-sm: 0.25rem   /* 4px */
+--x-radius-md: 0.5rem    /* 8px */
+--x-radius-lg: 0.75rem   /* 12px */
+--x-radius-full: 9999px</pre>
+        </div>
+        <div class="x-card x-stack">
+          <h4 class="x-h4">Transitions</h4>
+          <pre class="x-pre">--x-transition-fast: 100ms ease
+--x-transition-normal: 150ms ease
+--x-transition-slow: 300ms ease</pre>
+        </div>
+      </div>
+
+      <pre class="x-pre">/* Override tokens for your brand */
+:root {
+  --x-font-sans: 'Inter', system-ui, sans-serif;
+  --x-radius-md: 0.75rem; /* rounder corners */
+}
+
+/* Or override per theme */
+.x-theme-dark {
+  --x-bg-primary: hsl(262 83% 58%); /* purple accent */
+  --x-accent: hsl(262 83% 58%);
+}</pre>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- ECOSYSTEM -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="ecosystem">
+      <h2 class="x-h2">Ecosystem</h2>
+      <div class="x-block-3">
+        <article class="x-card x-stack">
+          <header>xandra</header>
+          <p>CSS framework. ~85 classes. Zero JS. Zero dependencies.</p>
+          <footer>
+            <code class="x-code">npm install xandra</code>
+          </footer>
+        </article>
+        <article class="x-card x-stack">
+          <header>xandra-cc</header>
+          <p>Contract compiler. 7 commands. Validates, audits, graphs, promotes.</p>
+          <footer>
+            <code class="x-code">npm install -D xandra-cc</code>
+          </footer>
+        </article>
+        <article class="x-card x-stack">
+          <header>vscode-xandra</header>
+          <p>VSCode extension. Completions, diagnostics, hover docs, ns tracking.</p>
+          <footer>
+            <code class="x-code">Search "Xandra CSS" in VSCode</code>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- ============================================ -->
+    <!-- BROWSER SUPPORT -->
+    <!-- ============================================ -->
+    <section class="x-stack doc-anchor" id="browser-support">
+      <h2 class="x-h2">Browser Support</h2>
+      <p class="x-body">Xandra uses modern CSS features. Minimum browser requirements:</p>
+      <div class="x-card x-stack">
+        <div class="x-between">
+          <span class="x-body">Container Queries</span>
+          <span class="x-caption x-text-muted">Chrome 105+, Firefox 110+, Safari 16+</span>
+        </div>
+        <div class="x-divider"></div>
+        <div class="x-between">
+          <span class="x-body">CSS Custom Properties</span>
+          <span class="x-caption x-text-muted">All modern browsers</span>
+        </div>
+        <div class="x-divider"></div>
+        <div class="x-between">
+          <span class="x-body">clamp()</span>
+          <span class="x-caption x-text-muted">Chrome 79+, Firefox 75+, Safari 13.1+</span>
+        </div>
+        <div class="x-divider"></div>
+        <div class="x-between">
+          <span class="x-body">:has(), :where(), :not()</span>
+          <span class="x-caption x-text-muted">Chrome 105+, Firefox 121+, Safari 15.4+</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- Footer -->
+    <footer class="x-between x-pad-4">
+      <p class="x-caption">Built with Xandra by NoirSystems</p>
+      <div class="x-row">
+        <a class="x-link" href="https://github.com/NoirSystems/Xandra">GitHub</a>
+        <a class="x-link" href="https://www.npmjs.com/package/xandra">npm</a>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>
