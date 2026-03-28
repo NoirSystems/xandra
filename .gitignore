@@ -8,3 +8,8 @@ docs/
 
 # Compiler dependencies
 xcc/node_modules/
+
+# VSCode extension build output
+vscode-xandra/out/
+vscode-xandra/node_modules/
+vscode-xandra/*.vsix

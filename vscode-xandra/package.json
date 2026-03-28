@@ -1,0 +1,116 @@
+{
+  "name": "vscode-xandra",
+  "displayName": "Xandra CSS",
+  "description": "Xandra CSS framework support — class completion, contract validation, ns tracking, composition insights",
+  "version": "0.1.0",
+  "publisher": "xandra-css",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "xandra",
+    "css",
+    "framework",
+    "html",
+    "vue",
+    "svelte"
+  ],
+  "activationEvents": [
+    "onLanguage:html",
+    "onLanguage:vue",
+    "onLanguage:svelte"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Xandra CSS",
+      "properties": {
+        "xandra.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Xandra diagnostics and completions"
+        },
+        "xandra.xccPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to xcc binary (auto-detected if empty)"
+        },
+        "xandra.validateOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run xcc check on save"
+        },
+        "xandra.validateOnType": {
+          "type": "boolean",
+          "default": false,
+          "description": "Run xcc check on type (debounced)"
+        },
+        "xandra.showNsDecorations": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show inline decorations for ns elements"
+        },
+        "xandra.showDensityIndicators": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show density region indicators in gutter"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "xandra.check",
+        "title": "Xandra: Check Current File"
+      },
+      {
+        "command": "xandra.audit",
+        "title": "Xandra: Audit NS Patterns"
+      },
+      {
+        "command": "xandra.auditTree",
+        "title": "Xandra: Audit NS Tree"
+      },
+      {
+        "command": "xandra.graph",
+        "title": "Xandra: Show Composition Graph"
+      },
+      {
+        "command": "xandra.promote",
+        "title": "Xandra: Find Promotion Candidates"
+      },
+      {
+        "command": "xandra.docs",
+        "title": "Xandra: Generate Composition Docs"
+      },
+      {
+        "command": "xandra.toggleAudit",
+        "title": "Xandra: Toggle Audit Mode (x-audit class)"
+      }
+    ],
+    "languages": [
+      {
+        "id": "html",
+        "extensions": [".html"]
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "lint": "eslint src/",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.20.0",
+    "eslint": "^8.0.0",
+    "@vscode/vsce": "^2.0.0"
+  }
+}

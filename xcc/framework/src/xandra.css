@@ -74,9 +74,12 @@
      x-shadow-sm  x-shadow-md  x-shadow-lg
      x-overflow-auto
 
-   Components (10+):
+   Spacing Modifiers (2):
+     x-dense  x-spacious
+
+   Components (11+):
      x-btn  x-btn-ghost  x-btn-outline
-     x-card  x-input  x-badge  x-avatar
+     x-card  x-nav  x-input  x-badge  x-avatar
      x-link  x-divider  x-code  x-pre
 
    Themes:

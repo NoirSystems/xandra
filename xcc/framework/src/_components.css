@@ -179,6 +179,110 @@
 }
 
 /* ==========================================
+   CARD — Implicit Child Styling
+   Card recognizes semantic HTML structure
+   ========================================== */
+
+.x-card > header {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-h4);
+  font-weight: 600;
+  line-height: var(--x-leading-tight);
+  color: var(--x-text-primary);
+  padding-bottom: var(--x-space-3);
+  border-bottom: 1px solid var(--x-border-subtle);
+  margin-bottom: var(--x-space-3);
+}
+
+.x-card > footer {
+  font-size: var(--x-text-caption);
+  color: var(--x-text-muted);
+  padding-top: var(--x-space-3);
+  border-top: 1px solid var(--x-border-subtle);
+  margin-top: var(--x-space-3);
+}
+
+/* First media in card goes edge-to-edge */
+.x-card > img:first-child,
+.x-card > picture:first-child,
+.x-card > video:first-child {
+  margin: calc(-1 * var(--x-space-4)) calc(-1 * var(--x-space-4)) 0;
+  width: calc(100% + var(--x-space-4) * 2);
+  max-width: none;
+  border-radius: var(--x-radius-md) var(--x-radius-md) 0 0;
+  object-fit: cover;
+}
+
+/* Paragraphs in cards use body styling */
+.x-card > p {
+  font-size: var(--x-text-body);
+  line-height: var(--x-leading-relaxed);
+  color: var(--x-text-secondary);
+}
+
+/* Buttons in card footer are slightly smaller */
+.x-card > footer .x-btn,
+.x-card > footer .x-btn-ghost,
+.x-card > footer .x-btn-outline {
+  min-height: 2rem;
+  padding: var(--x-space-1) var(--x-space-3);
+  font-size: var(--x-text-label);
+}
+
+/* ==========================================
+   NAV
+   Navigation container — links styled by context
+   ========================================== */
+
+.x-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--x-space-1);
+}
+
+.x-nav > a {
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-caption);
+  font-weight: 500;
+  color: var(--x-text-secondary);
+  text-decoration: none;
+  padding: var(--x-space-2) var(--x-space-3);
+  border-radius: var(--x-radius-sm);
+  transition: color var(--x-transition-normal), background-color var(--x-transition-normal);
+}
+
+.x-nav > a:hover {
+  color: var(--x-text-primary);
+  background-color: var(--x-bg-elevated);
+}
+
+.x-nav > a[aria-current="page"] {
+  color: var(--x-accent);
+  background-color: var(--x-accent-muted);
+}
+
+/* Badges inside headings match the heading's visual weight */
+.x-h1 .x-badge,
+.x-h2 .x-badge {
+  font-size: 0.4em;
+  vertical-align: middle;
+}
+
+.x-h3 .x-badge,
+.x-h4 .x-badge {
+  font-size: 0.5em;
+  vertical-align: middle;
+}
+
+/* Badge auto-sizes icons */
+.x-badge > svg,
+.x-badge > img {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+/* ==========================================
    INPUT
    Form input field
    ========================================== */

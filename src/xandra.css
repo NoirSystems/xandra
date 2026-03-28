@@ -2,9 +2,9 @@
    XANDRA CSS FRAMEWORK
    A standardization contract for consistent UI
 
-   Version: 2.0.0
+   Version: 2.1.0
    Philosophy: One class = one visual contract
-   Total classes: ~81
+   Total classes: ~85
    Zero JavaScript. Zero dependencies.
    ============================================ */
 
@@ -47,7 +47,7 @@
 @import './_ns-audit.css';
 
 /* ============================================
-   COMPLETE CLASS REFERENCE (~81 classes)
+   COMPLETE CLASS REFERENCE (~85 classes)
 
    Typography (13):
      x-display  x-h1  x-h2  x-h3  x-h4  x-h5  x-h6
@@ -74,9 +74,12 @@
      x-shadow-sm  x-shadow-md  x-shadow-lg
      x-overflow-auto
 
-   Components (10+):
+   Spacing Modifiers (2):
+     x-dense  x-spacious
+
+   Components (11+):
      x-btn  x-btn-ghost  x-btn-outline
-     x-card  x-input  x-badge  x-avatar
+     x-card  x-nav  x-input  x-badge  x-avatar
      x-link  x-divider  x-code  x-pre
 
    Themes:

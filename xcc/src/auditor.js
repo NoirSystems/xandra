@@ -170,6 +170,151 @@ function suggestClassName(keywords) {
   return 'x-' + descriptive.join('-');
 }
 
+// ---------------------------------------------------------------------------
+// Tree-based ns visualization
+// ---------------------------------------------------------------------------
+
+/**
+ * Build ns tree showing standard/ns status per element
+ * Respects boundary skipping for accurate counting
+ */
+export function buildNsTree(scanResults, config) {
+  const trees = [];
+
+  for (const scan of scanResults) {
+    if (!scan.tree || scan.error) continue;
+
+    const fileTree = buildFileNsTree(scan.tree, config);
+    if (fileTree.nsCount > 0) {
+      trees.push({
+        file: scan.file,
+        tree: fileTree.tree,
+        leafNs: fileTree.leafNs,
+        boundaryNs: fileTree.boundaryNs,
+        nsCount: fileTree.nsCount,
+        skippedChildren: fileTree.skippedChildren,
+      });
+    }
+  }
+
+  return trees.sort((a, b) => b.nsCount - a.nsCount);
+}
+
+function buildFileNsTree(rootEl, config) {
+  let leafNs = 0;
+  let boundaryNs = 0;
+  let skippedChildren = 0;
+
+  function walkForTree(el, insideBoundary) {
+    const isNs = el.hasNs;
+    const isBoundary = el.nsBoundary;
+    const isStandard = !isNs && el.xClasses.length > 0;
+    const hasXClasses = el.xClasses.length > 0;
+
+    let status = 'none';
+    if (insideBoundary) {
+      status = 'boundary-child';
+      skippedChildren++;
+    } else if (isBoundary) {
+      status = 'boundary';
+      boundaryNs++;
+    } else if (isNs) {
+      status = 'ns';
+      leafNs++;
+    } else if (hasXClasses) {
+      status = 'standard';
+    }
+
+    const childInsideBoundary = insideBoundary || isBoundary;
+    const children = [];
+    for (const child of el.children) {
+      const childNode = walkForTree(child, childInsideBoundary);
+      if (childNode) children.push(childNode);
+    }
+
+    // Only include elements that are relevant (have x-classes, ns, or relevant children)
+    if (status === 'none' && children.length === 0) return null;
+
+    return {
+      tag: el.tag,
+      classes: el.xClasses,
+      status,
+      nsReason: el.nsReason,
+      line: el.line,
+      children,
+    };
+  }
+
+  const tree = [];
+  for (const child of rootEl.children) {
+    const node = walkForTree(child, false);
+    if (node) tree.push(node);
+  }
+
+  return {
+    tree,
+    leafNs,
+    boundaryNs,
+    nsCount: leafNs + boundaryNs,
+    skippedChildren,
+  };
+}
+
+/**
+ * Format ns tree as printable lines
+ */
+export function formatNsTree(fileTree) {
+  const lines = [];
+
+  function walk(nodes, prefix) {
+    for (let i = 0; i < nodes.length; i++) {
+      const node = nodes[i];
+      const isLast = i === nodes.length - 1;
+      const connector = isLast ? '└── ' : '├── ';
+      const nextPrefix = prefix + (isLast ? '    ' : '│   ');
+
+      const label = buildNodeLabel(node);
+      lines.push(prefix + connector + label);
+
+      if (node.status === 'boundary' && node.children.length > 0) {
+        const childCount = countBoundaryChildren(node);
+        lines.push(nextPrefix + `    (${childCount} internal elements — not counted)`);
+      } else {
+        walk(node.children, nextPrefix);
+      }
+    }
+  }
+
+  walk(fileTree, '');
+  return lines;
+}
+
+function buildNodeLabel(node) {
+  const clsStr = node.classes.length > 0 ? node.classes.join(' ') : node.tag;
+
+  switch (node.status) {
+    case 'standard':
+      return `${clsStr} (standard)`;
+    case 'ns':
+      return `${clsStr} [ns data-ns="${node.nsReason || ''}"] ← LEAF NS`;
+    case 'boundary':
+      return `${clsStr} [ns data-ns="${node.nsReason || ''}"] [data-ns-boundary] ← BOUNDARY`;
+    case 'boundary-child':
+      return `${clsStr} (inside boundary)`;
+    default:
+      return `<${node.tag}> ${clsStr}`.trim();
+  }
+}
+
+function countBoundaryChildren(node) {
+  let count = 0;
+  for (const child of node.children) {
+    count++;
+    count += countBoundaryChildren(child);
+  }
+  return count;
+}
+
 /**
  * Full audit pipeline
  */

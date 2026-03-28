@@ -80,6 +80,12 @@ export const CONFLICT_GROUPS = [
     severity: 'error',
     reason: 'conflicting block containers — each defines a different layout constraint',
   },
+  {
+    name: 'density',
+    classes: ['x-dense', 'x-spacious'],
+    severity: 'error',
+    reason: 'conflicting density modifiers — an element cannot be both dense and spacious',
+  },
 ];
 
 // ---------------------------------------------------------------------------

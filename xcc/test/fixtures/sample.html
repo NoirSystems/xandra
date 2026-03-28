@@ -68,10 +68,62 @@
       <p class="x-body">Two padding values</p>
     </div>
 
+    <!-- Implicit child styling: card with semantic slots -->
+    <article class="x-card">
+      <img src="hero.jpg" alt="Hero">
+      <header>Media Card</header>
+      <p>Image goes edge-to-edge, header and footer auto-styled.</p>
+      <footer>
+        <button class="x-btn">Save</button>
+        <button class="x-btn-ghost">Cancel</button>
+      </footer>
+    </article>
+
+    <!-- Navigation with aria-current -->
+    <nav class="x-nav">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/about">About</a>
+      <a href="/settings">Settings</a>
+    </nav>
+
+    <!-- Density system: compact sidebar -->
+    <aside class="x-card x-stack x-dense">
+      <h4 class="x-h4">Compact Sidebar</h4>
+      <p class="x-body">Everything tighter in here.</p>
+      <button class="x-btn">Dense Button</button>
+    </aside>
+
+    <!-- WARNING: double density -->
+    <section class="x-stack x-dense">
+      <div class="x-card x-dense">
+        <p class="x-body">Double density — inner overrides outer</p>
+      </div>
+    </section>
+
+    <!-- Spacious section -->
+    <section class="x-card x-stack x-spacious">
+      <h3 class="x-h3">Spacious Card</h3>
+      <p class="x-body">Extra breathing room.</p>
+    </section>
+
+    <!-- Heading with badge -->
+    <h2 class="x-h2">Active Users <span class="x-badge">Live</span></h2>
+
+    <!-- Repeated ns pattern (promotion candidate) -->
+    <div class="x-card" ns data-ns="needs chart component for analytics">
+      <header>Another Chart</header>
+      <p class="x-body">Second instance of same ns reason</p>
+    </div>
+
+    <div class="x-card" ns data-ns="needs chart component for analytics">
+      <header>Yet Another Chart</header>
+      <p class="x-body">Third instance — now promotable</p>
+    </div>
+
     <!-- Standard footer -->
     <footer class="x-between x-pad-4 x-border-subtle">
       <p class="x-caption">Built with Xandra</p>
-      <nav class="x-row">
+      <nav class="x-nav">
         <a class="x-link" href="/docs">Docs</a>
         <a class="x-link" href="/github">GitHub</a>
       </nav>

@@ -19,7 +19,7 @@ function relPath(file) {
 // ---------------------------------------------------------------------------
 
 export function header() {
-  console.log(bold(cyan('xcc')) + dim(' v1.0.0 — Xandra Contract Compiler'));
+  console.log(bold(cyan('xcc')) + dim(' v1.1.0 — Xandra Contract Compiler'));
   console.log('');
 }
 
@@ -134,6 +134,45 @@ export function reportAudit(auditResult) {
 }
 
 // ---------------------------------------------------------------------------
+// Audit tree report
+// ---------------------------------------------------------------------------
+
+export function reportAuditTree(nsTrees, formatNsTreeFn) {
+  console.log(bold('NS TREE ANALYSIS'));
+  console.log('');
+
+  if (nsTrees.length === 0) {
+    console.log(green('  No ns elements found — fully standard codebase!'));
+    console.log('');
+    return;
+  }
+
+  for (const fileData of nsTrees) {
+    const path = relPath(fileData.file);
+    console.log(bold(cyan(path)) + dim(` (${fileData.nsCount} ns decisions)`));
+    const lines = formatNsTreeFn(fileData.tree);
+    for (const line of lines) {
+      // Colorize based on content
+      if (line.includes('← LEAF NS')) {
+        console.log(`  ${yellow(line)}`);
+      } else if (line.includes('← BOUNDARY')) {
+        console.log(`  ${magenta(line)}`);
+      } else if (line.includes('not counted')) {
+        console.log(`  ${dim(line)}`);
+      } else if (line.includes('(standard)')) {
+        console.log(`  ${green(line)}`);
+      } else {
+        console.log(`  ${line}`);
+      }
+    }
+    console.log('');
+    console.log(dim(`  Summary: ${fileData.leafNs} leaf ns + ${fileData.boundaryNs} boundary ns = ${fileData.nsCount} ns decisions`) +
+      (fileData.skippedChildren > 0 ? dim(` (${fileData.skippedChildren} boundary children not counted)`) : ''));
+    console.log('');
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Graph report
 // ---------------------------------------------------------------------------
 
@@ -240,6 +279,76 @@ export function reportInit(configPath) {
   console.log(`  2. Run ${cyan('xcc check')} to validate your HTML`);
   console.log(`  3. Run ${cyan('xcc audit')} to analyze ns patterns`);
   console.log(`  4. Run ${cyan('xcc graph')} to see composition patterns`);
+}
+
+// ---------------------------------------------------------------------------
+// Promote report
+// ---------------------------------------------------------------------------
+
+export function reportPromote(candidates) {
+  console.log(bold('PROMOTION CANDIDATES'));
+  console.log('');
+
+  if (candidates.length === 0) {
+    console.log(dim('  No promotable patterns found. Need repeated ns patterns (3+ occurrences).'));
+    console.log('');
+    return;
+  }
+
+  for (let i = 0; i < candidates.length; i++) {
+    const c = candidates[i];
+    console.log(`  ${bold(cyan(`${i + 1}. ${c.suggestedName}`))} — ${c.reason}`);
+    console.log(`     Found ${yellow(c.count + '')} times across ${c.files.length} files`);
+
+    if (c.structure.commonParents.length > 0) {
+      console.log(`     Parent context: ${c.structure.commonParents.join(', ')}`);
+    }
+
+    if (c.structure.commonChildren.length > 0) {
+      console.log(`     Common children: ${c.structure.commonChildren.map(ch => `${ch.name} (${ch.frequency}%)`).join(', ')}`);
+    }
+
+    console.log('');
+  }
+}
+
+export function reportPromotePreview(candidate, css) {
+  console.log(bold('PREVIEW: ') + cyan(candidate.suggestedName));
+  console.log('');
+  console.log(dim('Generated CSS:'));
+  for (const line of css.split('\n')) {
+    console.log(`  ${line}`);
+  }
+  console.log('');
+  console.log(bold('Files affected:'));
+  for (const file of candidate.files) {
+    console.log(`  ${dim('·')} ${relPath(file)}`);
+  }
+  console.log('');
+  console.log(dim(`Run with --apply to write CSS (not yet implemented — review and add manually)`));
+}
+
+// ---------------------------------------------------------------------------
+// Docs report
+// ---------------------------------------------------------------------------
+
+export function reportDocs(docsData, outputPath) {
+  console.log(bold('COMPOSITION DOCS'));
+  console.log('');
+  console.log(`  Patterns:     ${cyan(docsData.totalPatterns + '')}`);
+  console.log(`  Compositions: ${cyan(docsData.totalCompositions + '')}`);
+  console.log(`  Slots:        ${cyan(docsData.slots.length + '')}`);
+  console.log(`  NS groups:    ${cyan(docsData.nsGroups.length + '')}`);
+  console.log('');
+
+  if (docsData.densityUsage.dense > 0 || docsData.densityUsage.spacious > 0) {
+    console.log(`  Density: ${docsData.densityUsage.dense} dense, ${docsData.densityUsage.spacious} spacious, ${docsData.densityUsage.default} default`);
+    console.log('');
+  }
+
+  if (outputPath) {
+    console.log(`  Written to: ${green(relPath(outputPath))}`);
+  }
 }
 
 // ---------------------------------------------------------------------------

@@ -22,10 +22,13 @@ import { check, summarize } from './checker.js';
 import { audit } from './auditor.js';
 import { buildGraph, detectPatterns, detectAnomalies } from './grapher.js';
 import { optimize } from './optimizer.js';
+import { buildNsTree, formatNsTree } from './auditor.js';
+import { findPromotable, generatePromotionCSS } from './promoter.js';
+import { generateDocs, generateHTML, writeDocs } from './documenter.js';
 import * as report from './reporter.js';
 import { bold, dim, cyan } from './colors.js';
 
-const VERSION = '1.0.0';
+const VERSION = '1.1.0';
 
 export async function cli(args) {
   const command = args[0];
@@ -58,6 +61,12 @@ export async function cli(args) {
       break;
     case 'init':
       await runInit(flags);
+      break;
+    case 'promote':
+      await runPromote(flags);
+      break;
+    case 'docs':
+      await runDocs(flags);
       break;
     default:
       console.error(`Unknown command: ${command}`);
@@ -107,6 +116,14 @@ async function runAudit(flags) {
   }
 
   const auditResult = audit(scanResults, config);
+
+  // Tree mode
+  if (flags.tree) {
+    const nsTrees = buildNsTree(scanResults, config);
+    report.reportAuditTree(nsTrees, formatNsTree);
+    return;
+  }
+
   report.reportAudit(auditResult);
 
   // Check threshold
@@ -213,6 +230,58 @@ export default {
   report.reportInit(configPath);
 }
 
+async function runPromote(flags) {
+  const config = await loadConfig();
+  const targetPath = flags._[0] || process.cwd();
+  const scanResults = await scanFiles(config, resolve(targetPath));
+
+  report.reportScanning(scanResults.length);
+
+  if (scanResults.length === 0) {
+    console.log('No files found matching patterns:', config.include.join(', '));
+    return;
+  }
+
+  const threshold = parseInt(flags.threshold) || 3;
+  const candidates = findPromotable(scanResults, config, threshold);
+
+  if (flags.preview && candidates.length > 0) {
+    // Preview mode: show CSS for first (or specified) candidate
+    const index = parseInt(flags.preview) || 0;
+    const candidate = candidates[Math.min(index, candidates.length - 1)];
+    const css = generatePromotionCSS(candidate);
+    report.reportPromotePreview(candidate, css);
+  } else {
+    report.reportPromote(candidates);
+  }
+}
+
+async function runDocs(flags) {
+  const config = await loadConfig();
+  const targetPath = flags._[0] || process.cwd();
+  const scanResults = await scanFiles(config, resolve(targetPath));
+
+  report.reportScanning(scanResults.length);
+
+  if (scanResults.length === 0) {
+    console.log('No files found matching patterns:', config.include.join(', '));
+    return;
+  }
+
+  const docsData = generateDocs(scanResults, config);
+  const outputPath = flags.output || resolve(process.cwd(), 'dist', 'compositions.html');
+
+  // Ensure output directory exists
+  const { mkdirSync } = await import('node:fs');
+  const { dirname } = await import('node:path');
+  mkdirSync(dirname(outputPath), { recursive: true });
+
+  const html = generateHTML(docsData);
+  writeDocs(html, outputPath);
+
+  report.reportDocs(docsData, outputPath);
+}
+
 // ---------------------------------------------------------------------------
 // Argument parsing
 // ---------------------------------------------------------------------------
@@ -268,6 +337,7 @@ ${bold('COMMANDS')}
   audit [path]       Analyze ns patterns across the codebase
                      Clusters similar reasons, suggests new x- classes
                      --threshold <n>  Fail if ns count exceeds threshold
+                     --tree           Show tree-based ns visualization
 
   graph [path]       Build and display the composition graph
                      Shows parent-child relationships, detects patterns
@@ -279,6 +349,13 @@ ${bold('COMMANDS')}
 
   init               Create xandra.config.js with defaults
                      --force          Overwrite existing config
+
+  promote [path]     Find ns patterns that can become standard classes
+                     --threshold <n>  Min occurrences to suggest (default: 3)
+                     --preview [n]    Preview CSS for candidate n
+
+  docs [path]        Generate composition documentation (HTML)
+                     --output <path>  Output file (default: dist/compositions.html)
 
 ${bold('OPTIONS')}
   --help, -h         Show this help

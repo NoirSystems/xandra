@@ -136,7 +136,23 @@ export function check(scanResults, registry, config) {
         }
       }
 
-      // --- Rule 7: Excessive nesting depth ---
+      // --- Rule 7a: Double density ---
+      if (el.xClasses.includes('x-dense') || el.xClasses.includes('x-spacious')) {
+        const elDensity = el.xClasses.includes('x-dense') ? 'x-dense' : 'x-spacious';
+        if (el.parentXClasses.includes('x-dense') || el.parentXClasses.includes('x-spacious')) {
+          const parentDensity = el.parentXClasses.includes('x-dense') ? 'x-dense' : 'x-spacious';
+          results.push({
+            severity: 'warning',
+            code: 'DOUBLE_DENSITY',
+            message: `${elDensity} inside ${parentDensity} — inner overrides outer, may cause unexpectedly ${elDensity === 'x-dense' ? 'tight' : 'wide'} spacing`,
+            file: el.file,
+            line: el.line,
+            classes: [parentDensity, elDensity],
+          });
+        }
+      }
+
+      // --- Rule 8: Excessive nesting depth ---
       if (el.depth > config.depth.warn) {
         // Only warn once per deep element, not for every descendant
         const xDepth = countXandraAncestors(el);
