@@ -1,7 +1,21 @@
 /* ============================================
    XANDRA TYPOGRAPHY
-   10 type classes with fluid sizing
+   13 type classes with fluid sizing
    ============================================ */
+
+/* ==========================================
+   DISPLAY
+   Hero/display text — largest, boldest
+   ========================================== */
+
+.x-display {
+  font-family: var(--x-font-sans);
+  font-size: clamp(2.5rem, 6vw + 1rem, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: var(--x-tracking-tight);
+  color: var(--x-text-primary);
+}
 
 /* ==========================================
    HEADINGS
@@ -63,6 +77,20 @@
 }
 
 /* ==========================================
+   LEAD
+   Intro paragraph — slightly larger body text
+   ========================================== */
+
+.x-lead {
+  font-family: var(--x-font-sans);
+  font-size: clamp(1.125rem, 0.75vw + 0.875rem, 1.375rem);
+  font-weight: 400;
+  line-height: var(--x-leading-relaxed);
+  letter-spacing: var(--x-tracking-normal);
+  color: var(--x-text-secondary);
+}
+
+/* ==========================================
    BODY TEXT
    ========================================== */
 
@@ -73,6 +101,20 @@
   line-height: var(--x-leading-normal);
   letter-spacing: var(--x-tracking-normal);
   color: var(--x-text-secondary);
+}
+
+/* ==========================================
+   SMALL
+   Fine print, disclaimers
+   ========================================== */
+
+.x-small {
+  font-family: var(--x-font-sans);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: var(--x-leading-normal);
+  letter-spacing: var(--x-tracking-normal);
+  color: var(--x-text-muted);
 }
 
 /* ==========================================

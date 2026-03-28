@@ -56,6 +56,98 @@
 }
 
 /* ==========================================
+   BUTTON GHOST
+   Transparent background button
+   ========================================== */
+
+.x-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--x-space-2);
+
+  padding: var(--x-space-2) var(--x-space-4);
+  min-height: 2.5rem;
+
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-caption);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--x-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+
+  background-color: transparent;
+  border: none;
+  border-radius: var(--x-radius-md);
+
+  cursor: pointer;
+  transition:
+    background-color var(--x-transition-normal),
+    transform var(--x-transition-fast);
+}
+
+.x-btn-ghost:hover {
+  background-color: var(--x-bg-elevated);
+}
+
+.x-btn-ghost:active {
+  transform: scale(0.98);
+}
+
+.x-btn-ghost:focus-visible {
+  outline: none;
+  box-shadow: var(--x-focus-ring);
+}
+
+/* ==========================================
+   BUTTON OUTLINE
+   Border button
+   ========================================== */
+
+.x-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--x-space-2);
+
+  padding: var(--x-space-2) var(--x-space-4);
+  min-height: 2.5rem;
+
+  font-family: var(--x-font-sans);
+  font-size: var(--x-text-caption);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--x-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+
+  background-color: transparent;
+  border: 1px solid var(--x-border-default);
+  border-radius: var(--x-radius-md);
+
+  cursor: pointer;
+  transition:
+    background-color var(--x-transition-normal),
+    border-color var(--x-transition-normal),
+    transform var(--x-transition-fast);
+}
+
+.x-btn-outline:hover {
+  background-color: var(--x-bg-elevated);
+  border-color: var(--x-border-strong);
+}
+
+.x-btn-outline:active {
+  transform: scale(0.98);
+}
+
+.x-btn-outline:focus-visible {
+  outline: none;
+  box-shadow: var(--x-focus-ring);
+}
+
+/* ==========================================
    CARD
    Container component with adaptive padding
    ========================================== */
@@ -223,93 +315,6 @@
 }
 
 /* ==========================================
-   BUTTON VARIANTS
-   Ghost and outline button styles
-   ========================================== */
-
-.x-btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--x-space-2);
-
-  padding: var(--x-space-2) var(--x-space-4);
-  min-height: 2.5rem;
-
-  font-family: var(--x-font-sans);
-  font-size: var(--x-text-caption);
-  font-weight: 500;
-  line-height: 1;
-  color: var(--x-text-primary);
-  text-decoration: none;
-  white-space: nowrap;
-
-  background-color: transparent;
-  border: none;
-  border-radius: var(--x-radius-md);
-
-  cursor: pointer;
-  transition:
-    background-color var(--x-transition-normal),
-    transform var(--x-transition-fast);
-}
-
-.x-btn-ghost:hover {
-  background-color: var(--x-bg-elevated);
-}
-
-.x-btn-ghost:active {
-  transform: scale(0.98);
-}
-
-.x-btn-ghost:focus-visible {
-  outline: none;
-  box-shadow: var(--x-focus-ring);
-}
-
-.x-btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--x-space-2);
-
-  padding: var(--x-space-2) var(--x-space-4);
-  min-height: 2.5rem;
-
-  font-family: var(--x-font-sans);
-  font-size: var(--x-text-caption);
-  font-weight: 500;
-  line-height: 1;
-  color: var(--x-text-primary);
-  text-decoration: none;
-  white-space: nowrap;
-
-  background-color: transparent;
-  border: 1px solid var(--x-border-default);
-  border-radius: var(--x-radius-md);
-
-  cursor: pointer;
-  transition:
-    background-color var(--x-transition-normal),
-    border-color var(--x-transition-normal),
-    transform var(--x-transition-fast);
-}
-
-.x-btn-outline:hover {
-  background-color: var(--x-bg-elevated);
-  border-color: var(--x-border-strong);
-}
-
-.x-btn-outline:active {
-  transform: scale(0.98);
-}
-
-.x-btn-outline:focus-visible {
-  outline: none;
-  box-shadow: var(--x-focus-ring);
-}
-
-/* ==========================================
    CODE
    Inline code and code blocks
    ========================================== */
@@ -335,74 +340,4 @@
   overflow-x: auto;
   white-space: pre;
   tab-size: 2;
-}
-
-/* ==========================================
-   GLASS
-   Glassmorphism card variant
-   ========================================== */
-
-.x-glass {
-  background: hsl(var(--x-shadow-color) / 0.15);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid hsl(var(--x-shadow-color) / 0.1);
-  border-radius: var(--x-radius-lg);
-}
-
-/* ==========================================
-   SWITCH / TOGGLE
-   Toggle switch component
-   ========================================== */
-
-.x-switch {
-  --switch-w: 2.75rem;
-  --switch-h: 1.5rem;
-  --switch-thumb: 1.125rem;
-
-  position: relative;
-  display: inline-block;
-  width: var(--switch-w);
-  height: var(--switch-h);
-  flex-shrink: 0;
-}
-
-.x-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  position: absolute;
-}
-
-.x-switch-track {
-  position: absolute;
-  inset: 0;
-  background-color: var(--x-bg-elevated);
-  border: 1px solid var(--x-border-default);
-  border-radius: var(--x-radius-full);
-  cursor: pointer;
-  transition: background-color var(--x-transition-normal);
-}
-
-.x-switch-track::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 3px;
-  transform: translateY(-50%);
-  width: var(--switch-thumb);
-  height: var(--switch-thumb);
-  background-color: var(--x-text-primary);
-  border-radius: var(--x-radius-full);
-  transition: transform var(--x-transition-normal);
-}
-
-.x-switch input:checked + .x-switch-track {
-  background-color: var(--x-accent);
-  border-color: var(--x-accent);
-}
-
-.x-switch input:checked + .x-switch-track::after {
-  transform: translateY(-50%) translateX(calc(var(--switch-w) - var(--switch-thumb) - 7px));
-  background-color: var(--x-text-inverse);
 }

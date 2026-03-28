@@ -2,9 +2,10 @@
    XANDRA CSS FRAMEWORK
    A standardization contract for consistent UI
 
-   Version: 1.0.0
+   Version: 2.0.0
    Philosophy: One class = one visual contract
-   Complete: No external dependencies needed
+   Total classes: ~81
+   Zero JavaScript. Zero dependencies.
    ============================================ */
 
 /* ==========================================
@@ -18,30 +19,22 @@
    TYPOGRAPHY
    ========================================== */
 @import './_typography.css';
-@import './_text.css';
 
 /* ==========================================
    LAYOUT
    ========================================== */
 @import './_layout.css';
-@import './_flexbox.css';
-@import './_grid.css';
-@import './_positioning.css';
 
 /* ==========================================
    SPACING
    ========================================== */
 @import './_spacing.css';
-@import './_margins.css';
-@import './_sizing.css';
 
 /* ==========================================
    VISUAL
    ========================================== */
 @import './_colors.css';
-@import './_borders.css';
 @import './_utilities.css';
-@import './_effects.css';
 
 /* ==========================================
    COMPONENTS
@@ -49,36 +42,47 @@
 @import './_components.css';
 
 /* ==========================================
-   INTERACTION
-   ========================================== */
-@import './_display.css';
-@import './_transforms.css';
-@import './_transitions.css';
-
-/* ==========================================
    AUDIT SYSTEM
    ========================================== */
 @import './_ns-audit.css';
 
 /* ============================================
-   QUICK REFERENCE
+   COMPLETE CLASS REFERENCE (~81 classes)
 
-   Typography: x-h1-h6 x-body x-caption x-label x-mono
-   Text: x-text-left/center/right x-truncate x-uppercase
-   Layout: x-stack x-row x-between x-center x-block-1/prose/wide/full/2/3/4
-   Flex: x-flex x-flex-col x-grow x-shrink x-justify-* x-items-*
-   Grid: x-grid x-grid-cols-* x-col-span-* x-row-span-*
-   Position: x-relative x-absolute x-fixed x-sticky x-top/right/bottom/left-*
-   Spacing: x-pad-* x-gap-* x-m-* x-mt/mr/mb/ml-* x-mx/my-*
-   Sizing: x-w-* x-h-* x-min-w-* x-max-w-* x-size-* x-aspect-*
-   Colors: x-bg-* x-text-primary/secondary/muted x-border-* x-accent
-   Borders: x-border x-border-* x-round-* x-ring
-   Shadows: x-shadow-sm/md/lg x-drop-shadow-*
-   Effects: x-blur-* x-brightness-* x-backdrop-blur-*
-   Display: x-hidden x-block x-flex x-grid x-opacity-* x-overflow-*
-   Transform: x-scale-* x-rotate-* x-translate-*
-   Transition: x-transition x-duration-* x-ease-* x-animate-*
-   Components: x-btn x-card x-input x-badge x-avatar x-link x-divider
-   Themes: x-theme-dark/light/nvg/high-contrast
-   NS System: [ns] data-ns="reason" x-audit
+   Typography (13):
+     x-display  x-h1  x-h2  x-h3  x-h4  x-h5  x-h6
+     x-lead  x-body  x-small  x-caption  x-label  x-mono
+
+   Layout (12):
+     x-stack  x-row  x-between  x-center
+     x-block-1  x-block-prose  x-block-wide  x-block-full
+     x-block-2  x-block-3  x-block-4
+     x-hidden  x-sr-only
+
+   Spacing (20):
+     x-pad-1..6  x-gap-1..6  x-mt-1..6  x-mb-1..6
+
+   Color (18):
+     x-bg-base  x-bg-surface  x-bg-elevated  x-bg-primary
+     x-bg-success  x-bg-warning  x-bg-error
+     x-text-primary  x-text-secondary  x-text-muted  x-text-inverse
+     x-text-success  x-text-warning  x-text-error
+     x-accent  x-border  x-border-subtle  x-border-strong
+
+   Utilities (8):
+     x-round-sm  x-round-md  x-round-lg  x-round-full
+     x-shadow-sm  x-shadow-md  x-shadow-lg
+     x-overflow-auto
+
+   Components (10+):
+     x-btn  x-btn-ghost  x-btn-outline
+     x-card  x-input  x-badge  x-avatar
+     x-link  x-divider  x-code  x-pre
+
+   Themes:
+     x-theme-dark (default)  x-theme-light
+     x-theme-nvg  x-theme-high-contrast
+
+   NS System:
+     [ns]  data-ns="reason"  data-ns-boundary  .x-audit
    ============================================ */

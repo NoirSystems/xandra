@@ -1,6 +1,6 @@
 /* ============================================
    XANDRA LAYOUT
-   Flex and grid layout primitives with container queries
+   Container-query responsive layout primitives
    ============================================ */
 
 /* ==========================================
@@ -153,33 +153,22 @@
 }
 
 /* ==========================================
-   RESPONSIVE PREFIXES (Optional)
-   For cases where viewport control is needed
+   DISPLAY UTILITIES
+   Essential layout visibility controls
    ========================================== */
 
-/* Small: 640px+ */
-@media (min-width: 640px) {
-  .sm\:x-stack { display: flex; flex-direction: column; gap: var(--x-space-4); }
-  .sm\:x-row { display: flex; flex-direction: row; flex-wrap: wrap; gap: var(--x-space-4); align-items: center; }
-  .sm\:x-block-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--x-space-4); }
-  .sm\:x-block-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--x-space-4); }
-  .sm\:x-block-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--x-space-4); }
+.x-hidden {
+  display: none;
 }
 
-/* Medium: 768px+ */
-@media (min-width: 768px) {
-  .md\:x-stack { display: flex; flex-direction: column; gap: var(--x-space-4); }
-  .md\:x-row { display: flex; flex-direction: row; flex-wrap: wrap; gap: var(--x-space-4); align-items: center; }
-  .md\:x-block-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--x-space-4); }
-  .md\:x-block-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--x-space-4); }
-  .md\:x-block-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--x-space-4); }
-}
-
-/* Large: 1024px+ */
-@media (min-width: 1024px) {
-  .lg\:x-stack { display: flex; flex-direction: column; gap: var(--x-space-4); }
-  .lg\:x-row { display: flex; flex-direction: row; flex-wrap: wrap; gap: var(--x-space-4); align-items: center; }
-  .lg\:x-block-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--x-space-4); }
-  .lg\:x-block-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--x-space-4); }
-  .lg\:x-block-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--x-space-4); }
+.x-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
