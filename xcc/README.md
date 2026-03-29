@@ -32,11 +32,11 @@ ERRORS (2)
   src/page.html:15
     ✕ x-stack + x-row — conflicting layout modes
   src/page.html:28
-    ✕ [ns] without data-ns — every deviation needs a reason
+    ✕ data-ns without reason — every deviation needs a reason
 
 WARNINGS (3)
   src/page.html:42
-    ⚠ Non-x- class "mt-8" on element with x- classes but no [ns]
+    ⚠ Non-x- class "mt-8" on element with x- classes but no [data-ns]
   src/page.html:67
     ⚠ x-pad-3 + x-pad-5 — multiple padding values
   src/page.html:98
@@ -52,8 +52,8 @@ SUMMARY
 
 | # | Rule | Severity |
 |---|------|----------|
-| 1 | `ns` without `data-ns` reason | Error |
-| 2 | Non-x- class mixed with x- classes without `ns` | Warning |
+| 1 | `data-ns` with empty reason | Error |
+| 2 | Non-x- class mixed with x- classes without `data-ns` | Warning |
 | 3 | Conflicting x- classes (e.g. `x-stack` + `x-row`) | Error |
 | 4 | Redundant x- classes (e.g. `x-pad-3` + `x-pad-5`) | Warning |
 | 5 | Unknown x- class not in framework | Warning |
@@ -116,12 +116,12 @@ NS TREE ANALYSIS:
 src/dashboard.html (4 ns decisions)
   └── x-block-1 x-stack (standard)
       ├── x-between (standard)
-      │   └── div [ns data-ns="custom filter dropdown"] ← LEAF NS
+      │   └── div [data-ns="custom filter dropdown"] ← LEAF NS
       ├── x-block-3 (standard)
       │   ├── x-card (standard)
-      │   └── div [ns data-ns="chart.js"] [data-ns-boundary] ← BOUNDARY
+      │   └── div [data-ns="chart.js"] [data-ns-boundary] ← BOUNDARY
       │       (12 internal elements — not counted)
-      └── footer [ns data-ns="sticky footer"] ← LEAF NS
+      └── footer [data-ns="sticky footer"] ← LEAF NS
 
   Summary: 3 leaf ns + 1 boundary ns = 4 ns decisions (12 boundary children not counted)
 ```

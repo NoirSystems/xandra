@@ -81,7 +81,7 @@ class NsDecorationProvider {
     const spaciousDecorations = [];
 
     // Scan for ns attributes
-    const nsRegex = /\bns\b(?:\s+data-ns="([^"]*)")?(?:\s+data-ns-boundary)?/g;
+    const nsRegex = /\bdata-ns="([^"]*)"(?:\s+data-ns-boundary)?/g;
     let match;
 
     while ((match = nsRegex.exec(text)) !== null) {
@@ -92,12 +92,12 @@ class NsDecorationProvider {
       const reason = match[1];
       const isBoundary = match[0].includes('data-ns-boundary');
 
-      if (!reason && !match[0].includes('data-ns=')) {
-        // ns without data-ns — error
+      if (!reason) {
+        // data-ns="" — empty reason, error
         missingReasonDecorations.push({
           range: line.range,
           renderOptions: {
-            after: { contentText: '  ← ns missing data-ns reason' },
+            after: { contentText: '  ← data-ns missing reason' },
           },
         });
       } else if (isBoundary) {

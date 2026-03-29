@@ -209,7 +209,7 @@ export default {
 
   // NS enforcement
   ns: {
-    requireReason: true,       // data-ns must be present on [ns] elements
+    requireReason: true,       // data-ns value must be non-empty
     maxPerFile: 10,            // warn if a file exceeds this ns count
     maxTotal: 50,              // xcc audit --threshold default
     boundarySkipChildren: true,// don't count children inside [data-ns-boundary]

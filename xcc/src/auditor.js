@@ -296,9 +296,9 @@ function buildNodeLabel(node) {
     case 'standard':
       return `${clsStr} (standard)`;
     case 'ns':
-      return `${clsStr} [ns data-ns="${node.nsReason || ''}"] ← LEAF NS`;
+      return `${clsStr} [data-ns="${node.nsReason || ''}"] ← LEAF NS`;
     case 'boundary':
-      return `${clsStr} [ns data-ns="${node.nsReason || ''}"] [data-ns-boundary] ← BOUNDARY`;
+      return `${clsStr} [data-ns="${node.nsReason || ''}"] [data-ns-boundary] ← BOUNDARY`;
     case 'boundary-child':
       return `${clsStr} (inside boundary)`;
     default:

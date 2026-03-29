@@ -150,11 +150,11 @@ function findRelevantRange(document, lineNum, message) {
     }
   }
 
-  // Try to find ns attribute
-  if (message.includes('[ns]') || message.includes('data-ns')) {
-    const nsIdx = lineText.indexOf(' ns');
+  // Try to find data-ns attribute
+  if (message.includes('[data-ns]') || message.includes('data-ns')) {
+    const nsIdx = lineText.indexOf('data-ns');
     if (nsIdx !== -1) {
-      return new vscode.Range(safeLine, nsIdx, safeLine, nsIdx + 3);
+      return new vscode.Range(safeLine, nsIdx, safeLine, nsIdx + 7);
     }
   }
 
@@ -167,7 +167,7 @@ function findRelevantRange(document, lineNum, message) {
  * Infer a diagnostic code from the message
  */
 function inferCode(message) {
-  if (message.includes('[ns] without data-ns')) return CODE_LABELS.NS_NO_REASON;
+  if (message.includes('data-ns without reason')) return CODE_LABELS.NS_NO_REASON;
   if (message.includes('Non-x- class')) return CODE_LABELS.UNMARKED_NON_STANDARD;
   if (message.includes('conflicting')) return CODE_LABELS.CONFLICT;
   if (message.includes('multiple') && message.includes('values')) return CODE_LABELS.REDUNDANT;

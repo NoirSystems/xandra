@@ -107,7 +107,7 @@ function walkNode(node, file, lineIndex, lineOffset, parentXClasses, parentTag, 
   const xClasses = classes.filter(c => c.startsWith('x-'));
   const nonXClasses = classes.filter(c => !c.startsWith('x-'));
 
-  const hasNs = 'ns' in attribs;
+  const hasNs = 'data-ns' in attribs;
   const nsReason = attribs['data-ns'] || null;
   const nsBoundary = 'data-ns-boundary' in attribs;
 

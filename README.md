@@ -213,20 +213,19 @@ When you need something outside the ~85 standard classes, you mark it:
 <!-- Standard: no marker needed -->
 <div class="x-card x-stack">...</div>
 
-<!-- Non-standard: requires ns + reason -->
-<div class="x-card" ns data-ns="needs sticky positioning for sidebar">
+<!-- Non-standard: requires data-ns with reason -->
+<div class="x-card" data-ns="needs sticky positioning for sidebar">
   ...
 </div>
 
 <!-- Third-party boundary: children not individually counted -->
-<div ns data-ns="chart.js integration" data-ns-boundary>
+<div data-ns="chart.js integration" data-ns-boundary>
   <canvas id="chart"></canvas>
 </div>
 ```
 
 **Rules:**
-- `ns` marks an element as a deliberate deviation
-- `data-ns="reason"` is required — every deviation needs justification
+- `data-ns="reason"` marks an element as a deliberate deviation — the reason is required
 - `data-ns-boundary` marks an entire subtree (third-party components)
 - `x-audit` on `<html>` enables visual audit mode (CSS-only, no JS)
 

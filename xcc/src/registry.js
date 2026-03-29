@@ -137,8 +137,8 @@ export const COMPOSITIONS = {
 
   // Suspicious: warn and suggest ns if intentional
   suspicious: [
-    { test: (p, c) => isBlock(p) && isBlock(c), reason: 'nested grids — add [ns] if this is intentional' },
-    { test: (p, c) => p === 'x-card' && c === 'x-card', reason: 'nested cards — unusual, add [ns] if intentional' },
+    { test: (p, c) => isBlock(p) && isBlock(c), reason: 'nested grids — add data-ns if this is intentional' },
+    { test: (p, c) => p === 'x-card' && c === 'x-card', reason: 'nested cards — unusual, add data-ns if intentional' },
     { test: (p, c) => isBtn(p), reason: 'button should contain text/icon only, not nested components' },
   ],
 

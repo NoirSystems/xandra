@@ -93,17 +93,17 @@ function isInsideTag(text) {
 }
 
 function getNsSnippets() {
-  const nsAttr = new vscode.CompletionItem('ns data-ns=""', vscode.CompletionItemKind.Snippet);
-  nsAttr.insertText = new vscode.SnippetString('ns data-ns="$1"');
+  const nsAttr = new vscode.CompletionItem('data-ns=""', vscode.CompletionItemKind.Snippet);
+  nsAttr.insertText = new vscode.SnippetString('data-ns="$1"');
   nsAttr.detail = 'Mark element as non-standard with reason';
   nsAttr.documentation = new vscode.MarkdownString(
-    'The **ns** attribute marks an element as a deliberate deviation from the Xandra standard.\n\n' +
-    '`data-ns` provides the reason — required by default.\n\n' +
-    'Example: `ns data-ns="third-party: chart.js integration"`'
+    '**data-ns** marks an element as a deliberate deviation from the Xandra standard.\n\n' +
+    'The value is the reason — required by default.\n\n' +
+    'Example: `data-ns="third-party: chart.js integration"`'
   );
 
-  const nsBoundary = new vscode.CompletionItem('ns data-ns="" data-ns-boundary', vscode.CompletionItemKind.Snippet);
-  nsBoundary.insertText = new vscode.SnippetString('ns data-ns="$1" data-ns-boundary');
+  const nsBoundary = new vscode.CompletionItem('data-ns="" data-ns-boundary', vscode.CompletionItemKind.Snippet);
+  nsBoundary.insertText = new vscode.SnippetString('data-ns="$1" data-ns-boundary');
   nsBoundary.detail = 'Mark subtree as non-standard boundary';
   nsBoundary.documentation = new vscode.MarkdownString(
     '**Boundary ns** — marks an entire subtree as non-standard.\n\n' +

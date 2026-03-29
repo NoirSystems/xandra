@@ -1,6 +1,6 @@
 {
   "name": "xandra",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "Xandra CSS Framework - A standardization contract for consistent UI",
   "main": "dist/xandra.css",
   "style": "dist/xandra.css",

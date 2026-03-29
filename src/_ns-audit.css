@@ -2,11 +2,10 @@
    XANDRA NS (NON-STANDARD) AUDIT SYSTEM
 
    Any deviation from Xandra's standard classes must use:
-   - [ns] attribute to mark the deviation
-   - data-ns attribute to explain WHY the deviation is needed
+   - data-ns="reason" attribute to mark and explain the deviation
 
    Example:
-   <div class="x-card" ns data-ns="needs custom max-width for hero section">
+   <div class="x-card" data-ns="needs custom max-width for hero section">
 
    Enable audit mode by adding .x-audit to <body> or <html>
    ============================================ */
@@ -16,11 +15,11 @@
    Subtle visual marker on all ns elements (always visible)
    ========================================== */
 
-[ns] {
+[data-ns] {
   position: relative;
 }
 
-[ns]::before {
+[data-ns]::before {
   content: '';
   position: absolute;
   top: 0;
@@ -40,13 +39,13 @@
    ========================================== */
 
 /* Highlight all ns elements with dashed outline */
-.x-audit [ns] {
+.x-audit [data-ns] {
   outline: 2px dashed var(--x-warning) !important;
   outline-offset: 2px;
 }
 
 /* Show the data-ns reason as a tooltip-like label */
-.x-audit [ns]::after {
+.x-audit [data-ns]::after {
   content: attr(data-ns);
   position: absolute;
   top: 100%;
@@ -72,28 +71,28 @@
 }
 
 /* Show tooltip on hover */
-.x-audit [ns]:hover::after {
+.x-audit [data-ns]:hover::after {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* ==========================================
    ERROR STATE
-   Missing data-ns explanation - show red indicator
+   Empty data-ns (no explanation) - show red indicator
    ========================================== */
 
 /* Red dot for missing explanation */
-[ns]:not([data-ns])::before {
+[data-ns=""]::before {
   background-color: var(--x-error);
 }
 
 /* Red outline in audit mode */
-.x-audit [ns]:not([data-ns]) {
+.x-audit [data-ns=""] {
   outline-color: var(--x-error) !important;
 }
 
 /* Error message for missing explanation */
-.x-audit [ns]:not([data-ns])::after {
+.x-audit [data-ns=""]::after {
   content: '⚠ Missing data-ns explanation!';
   background-color: var(--x-error);
   color: hsl(0 0% 100%);
@@ -105,12 +104,12 @@
    All children are implicitly non-standard
    ========================================== */
 
-[ns][data-ns-boundary] {
+[data-ns][data-ns-boundary] {
   /* Third-party boundary wrapper */
 }
 
 /* In audit mode, show boundary indicator */
-.x-audit [ns][data-ns-boundary]::after {
+.x-audit [data-ns][data-ns-boundary]::after {
   content: 'Third-party: ' attr(data-ns);
   background-color: var(--x-accent);
 }

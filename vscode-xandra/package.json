@@ -2,7 +2,7 @@
   "name": "vscode-xandra",
   "displayName": "Xandra CSS",
   "description": "Xandra CSS framework support — class completion, contract validation, ns tracking, composition insights",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "alexcircuits",
   "license": "Apache-2.0",
   "repository": {

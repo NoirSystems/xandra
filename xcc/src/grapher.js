@@ -180,7 +180,7 @@ export function detectAnomalies(graph, scanResults) {
           if (el.parentXClasses.includes(cls) && !el.hasNs) {
             anomalies.push({
               type: 'SELF_NESTING',
-              message: `${cls} nested inside itself — unusual, add [ns] if intentional`,
+              message: `${cls} nested inside itself — unusual, add data-ns if intentional`,
               file: el.file,
               line: el.line,
               class: cls,

@@ -2,8 +2,8 @@
  * Contract Checker
  *
  * Validates scanned elements against the Xandra contract:
- * - ns without data-ns → ERROR
- * - Non-x- class without ns → WARNING
+ * - data-ns without reason (empty value) → ERROR
+ * - Non-x- class without data-ns → WARNING
  * - Conflicting x- classes → ERROR
  * - Redundant x- classes → WARNING
  * - Unknown x- classes → WARNING
@@ -40,20 +40,20 @@ export function check(scanResults, registry, config) {
       // Skip non-element content
       if (!el.tag || el.tag === '#root') continue;
 
-      // --- Rule 1: ns without data-ns ---
+      // --- Rule 1: data-ns without reason (empty value) ---
       if (el.hasNs && !el.nsReason && config.ns.requireReason) {
         results.push({
           severity: 'error',
           code: 'NS_NO_REASON',
-          message: `[ns] without data-ns — every deviation needs a reason`,
+          message: `data-ns without reason — every deviation needs a reason`,
           file: el.file,
           line: el.line,
         });
       }
 
-      // --- Rule 2: Non-x- classes without ns ---
+      // --- Rule 2: Non-x- classes without data-ns ---
       if (el.nonXClasses.length > 0 && el.xClasses.length > 0 && !el.hasNs) {
-        // Element uses both x- and non-x- classes but isn't marked ns
+        // Element uses both x- and non-x- classes but isn't marked with data-ns
         // Filter out common harmless classes (js hooks, state classes)
         const suspicious = el.nonXClasses.filter(c =>
           !c.startsWith('js-') &&
@@ -69,7 +69,7 @@ export function check(scanResults, registry, config) {
           results.push({
             severity: 'warning',
             code: 'UNMARKED_NON_STANDARD',
-            message: `Non-x- class "${suspicious.join('", "')}" on element with x- classes but no [ns] attribute`,
+            message: `Non-x- class "${suspicious.join('", "')}" on element with x- classes but no [data-ns] attribute`,
             file: el.file,
             line: el.line,
             classes: suspicious,

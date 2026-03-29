@@ -111,7 +111,7 @@ import 'xandra';</code></pre>
         </article>
         <article class="x-card x-stack">
           <h4 class="x-h4">Deviation is tracked</h4>
-          <p class="x-body">When you need something outside the standard, you mark it with <code class="x-code">[ns]</code>. Every deviation is tracked, audited, and eventually promoted into a new standard class.</p>
+          <p class="x-body">When you need something outside the standard, you mark it with <code class="x-code">data-ns</code>. Every deviation is tracked, audited, and eventually promoted into a new standard class.</p>
         </article>
         <article class="x-card x-stack">
           <h4 class="x-h4">Zero JavaScript</h4>
@@ -822,7 +822,7 @@ npx xcc check src/</code></pre>
         <article class="x-card x-stack">
           <h4 class="x-h4">Leaf Deviation</h4>
           <p class="x-caption x-text-muted">Single element needs custom CSS. Mark it and explain why.</p>
-          <pre class="x-pre"><code class="language-html">&lt;div class="x-card" ns
+          <pre class="x-pre"><code class="language-html">&lt;div class="x-card"
   data-ns="needs chart.js canvas"&gt;
   &lt;canvas id="chart"&gt;&lt;/canvas&gt;
 &lt;/div&gt;</code></pre>
@@ -831,7 +831,7 @@ npx xcc check src/</code></pre>
         <article class="x-card x-stack">
           <h4 class="x-h4">Boundary</h4>
           <p class="x-caption x-text-muted">Third-party widget — everything inside is non-standard.</p>
-          <pre class="x-pre"><code class="language-html">&lt;div ns data-ns="Stripe Elements"
+          <pre class="x-pre"><code class="language-html">&lt;div data-ns="Stripe Elements"
   data-ns-boundary&gt;
   &lt;!-- All children are implicitly ns --&gt;
   &lt;div id="stripe-card"&gt;&lt;/div&gt;
@@ -927,7 +927,7 @@ PROMOTION CANDIDATES
         <div class="x-stack">
           <div class="x-between">
             <span class="x-text-error x-caption">ERROR</span>
-            <span class="x-caption">ns without data-ns reason</span>
+            <span class="x-caption">data-ns with empty reason</span>
           </div>
           <div class="x-between">
             <span class="x-text-error x-caption">ERROR</span>
@@ -951,13 +951,13 @@ PROMOTION CANDIDATES
           </div>
           <div class="x-between">
             <span class="x-text-warning x-caption">WARNING</span>
-            <span class="x-caption">Non-x- class without ns marker</span>
+            <span class="x-caption">Non-x- class without data-ns marker</span>
           </div>
         </div>
       </div>
 
       <pre class="x-pre"><code class="language-bash">$ npx xcc check src/
-xcc v1.1.1 — Xandra Contract Compiler
+xcc v1.2.0 — Xandra Contract Compiler
 
 Scanning 12 files...
 
@@ -969,7 +969,7 @@ WARNINGS (2)
   src/pages/dashboard.html:52
     ⚠ x-pad-3 + x-pad-5 — multiple padding values
   src/components/chart.html:18
-    ⚠ Non-x- class "chartjs-wrapper" without [ns]
+    ⚠ Non-x- class "chartjs-wrapper" without [data-ns]
 
 SUMMARY
   12 files scanned

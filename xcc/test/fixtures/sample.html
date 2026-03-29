@@ -40,9 +40,9 @@
       </article>
 
       <!-- NS card: custom requirement -->
-      <article class="x-card" ns data-ns="needs chart component for analytics">
+      <article class="x-card" data-ns="needs chart component for analytics">
         <header>Analytics</header>
-        <div ns data-ns="third-party: chart.js canvas" data-ns-boundary>
+        <div data-ns="third-party: chart.js canvas" data-ns-boundary>
           <canvas id="chart"></canvas>
         </div>
       </article>
@@ -53,13 +53,13 @@
       <p>This should trigger a conflict error</p>
     </div>
 
-    <!-- WARNING: non-x class without ns -->
+    <!-- WARNING: non-x class without data-ns -->
     <div class="x-card mt-8 max-w-lg">
       <p class="x-body">This has Tailwind classes without ns</p>
     </div>
 
-    <!-- ERROR: ns without reason -->
-    <div class="x-card" ns>
+    <!-- ERROR: data-ns without reason -->
+    <div class="x-card" data-ns>
       <p class="x-body">Deviation without explanation</p>
     </div>
 
@@ -110,12 +110,12 @@
     <h2 class="x-h2">Active Users <span class="x-badge">Live</span></h2>
 
     <!-- Repeated ns pattern (promotion candidate) -->
-    <div class="x-card" ns data-ns="needs chart component for analytics">
+    <div class="x-card" data-ns="needs chart component for analytics">
       <header>Another Chart</header>
       <p class="x-body">Second instance of same ns reason</p>
     </div>
 
-    <div class="x-card" ns data-ns="needs chart component for analytics">
+    <div class="x-card" data-ns="needs chart component for analytics">
       <header>Yet Another Chart</header>
       <p class="x-body">Third instance — now promotable</p>
     </div>

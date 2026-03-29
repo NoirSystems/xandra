@@ -1,6 +1,6 @@
 {
   "name": "xandra-cc",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Xandra Contract Compiler — TypeScript for CSS. Validates HTML against the Xandra design contract.",
   "type": "module",
   "bin": {
